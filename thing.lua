@@ -3577,9 +3577,6 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(workspace.Lobby.Ghost.ClickDetector)
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-task.wait(1)
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-v.Transparency = 0
 end
 else
 OrionLib:MakeNotification({Name = "Error",Content = "You need to be in lobby and have 666+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
