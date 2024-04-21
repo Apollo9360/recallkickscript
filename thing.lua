@@ -247,7 +247,7 @@ end
 end
 
 function SpamReplica()
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" and game.Players.LocalPlayer.Character.IsInDefaultArena.Value == true then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
 while ReplicaFarm do
 game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
 wait(5.5)
@@ -3255,11 +3255,11 @@ FarmReplica = Tab14:AddToggle({
 	Default = false,
 	Callback = function(Value)
 ReplicaFarm = Value
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" and game.Players.LocalPlayer.Character.IsInDefaultArena.Value == true then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
 if ReplicaFarm == true then
 coroutine.wrap(SpamReplica)()
 end
-while ReplicaFarm and game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" and game.Players.LocalPlayer.Character.IsInDefaultArena.Value == true do
+while ReplicaFarm and game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" do
 for i, v in pairs(workspace:GetChildren()) do
                 if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
 game.ReplicatedStorage.b:FireServer(v:WaitForChild("HumanoidRootPart"),true)
@@ -4854,7 +4854,7 @@ end
 while On and game.Players.LocalPlayer.leaderstats.Glove.Value == "Home Run" do
 game:GetService("ReplicatedStorage").HomeRun:FireServer({["start"] = true})
 game:GetService("ReplicatedStorage").HomeRun:FireServer({["finished"] = true})
-task.wait(4.1)
+task.wait(0.1)
 end
 while On and game.Players.LocalPlayer.leaderstats.Glove.Value == "🗿" do
 game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer(CFrame.new(math.random(-70, 63), -5.72293854, math.random(-90, 93), 0.151493087, -8.89114702e-08, 0.988458335, 1.45089563e-09, 1, 8.97272727e-08, -0.988458335, -1.21589121e-08, 0.151493087))
