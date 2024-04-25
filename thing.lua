@@ -3974,34 +3974,21 @@ end
 })
 
 Tab7:AddToggle({
-	Name = "Infinity Jump",
+	Name = "Infinity Jump(DISABLED)",
 	Default = false,
 	Callback = function(Value)
 _G.InfiniteJump = Value
 game:GetService("UserInputService").JumpRequest:connect(function()
 if _G.InfiniteJump then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+--game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
 end
 end)
 	end    
 })
 
 Tab7:AddButton({
-	Name = "View Testing Server",
+	Name = "View Testing Server(no)",
 	Callback = function()
-local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
-if teleportFunc then
-    teleportFunc([[
-        if not game:IsLoaded() then
-            game.Loaded:Wait()
-        end
-        local localPlr = game:GetService("Players").LocalPlayer
-        repeat wait() until localPlr
-        game:GetService("RunService").RenderStepped:Connect(function()
-game:GetService("GuiService"):ClearError()
-game.CoreGui.RobloxLoadingGUI:Destroy()
-        end)
-    ]])
 end
 game:GetService("TeleportService"):Teleport(9020359053)
   	end    
