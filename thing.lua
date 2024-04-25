@@ -7073,13 +7073,6 @@ CanYouFps = Tab:AddLabel("Your Fps [ "..math.floor(workspace:GetRealPhysicsFPS()
 Tab:AddParagraph("Game's ID [ "..game.PlaceId.." ]","Server ID [ "..game.JobId.." ]")
 
 Tab:AddButton({
-	Name = "Server ID",
-	Callback = function()
-            setclipboard(game.JobId)
-  	end    
-})
-
-Tab:AddButton({
 	Name = "Get Elude",
 	Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-502.336, 14.228, -179.597)
