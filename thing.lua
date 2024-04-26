@@ -2295,7 +2295,7 @@ GuardianAngelSpam = Value
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Guardian Angel" then
 while GuardianAngelSpam and game.Players.LocalPlayer.leaderstats.Glove.Value == "Guardian Angel" do
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer(game.Players[SaveThePlayer])
-task.wait()
+task.wait(5)
 end
 elseif GuardianAngelSpam == true then
 OrionLib:MakeNotification({Name = "Error",Content = "You don't have Guardian Angel equipped.",Image = "rbxassetid://7733658504",Time = 5})
