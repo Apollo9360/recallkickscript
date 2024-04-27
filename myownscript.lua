@@ -626,6 +626,7 @@ fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
+end
   	end    
 })
 Tab1:AddButton({
