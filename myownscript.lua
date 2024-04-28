@@ -1314,7 +1314,7 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
 fireclickdetector(game.Workspace.Lobby["God's Hand"].ClickDetector)
 wait(TBS)
-game:GetService("ReplicatedStorage").TimestopJump:FireServer
+game:GetService("ReplicatedStorage").TimestopJump:FireServer()
 game:GetService("ReplicatedStorage").Timestopchoir:FireServer()
 game:GetService("ReplicatedStorage").Timestop:FireServer()
 wait(TBS)
