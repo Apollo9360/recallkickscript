@@ -1282,6 +1282,14 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
 fireclickdetector(game.Workspace.Lobby["bus"].ClickDetector)
 wait(TBS)
+game:GetService("ReplicatedStorage").busmoment:FireServer()
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab1:AddButton({
 	Name = "Phase",
 	Callback = function()
@@ -1297,7 +1305,141 @@ else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
   	end    
-})wait(TBS)
+})
+Tab1:AddButton({
+	Name = "God's Hand",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["God's Hand"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").TimestopJump:FireServer
+game:GetService("ReplicatedStorage").Timestopchoir:FireServer()
+game:GetService("ReplicatedStorage").Timestop:FireServer()
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddButton({
+	Name = "Ferryman",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Ferryman"].ClickDetector)
+wait(TBS)
+local players = game.Players:GetChildren()
+local randomPlayer = players[math.random(1, #players)]
+repeat randomPlayer = players[math.random(1, #players)] until randomPlayer ~= game.Players.LocalPlayer and randomPlayer.Character:FindFirstChild("entered") and randomPlayer.Character:FindFirstChild("ded") == nil and randomPlayer.Character:FindFirstChild("InLabyrinth") == nil and randomPlayer.Character:FindFirstChild("rock") == nil
+Target = randomPlayer
+game.Players.LocalPlayer.Character.FerrymanStaff.StaffConfig.AbilityEvent:FireServer("Leap")
+wait(1.85)
+game.Players.LocalPlayer.Character.FerrymanStaff.StaffConfig.AbilityEvent:FireServer("FinishLeap",Target.Character.HumanoidRootPart.Position)
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddButton({
+	Name = "Blackhole",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Blackhole"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddButton({
+	Name = "Blink",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Blink"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").Blink:FireServer("OutOfBody", {["dir"] = Vector3.new(0, 0, 0),["ismoving"] = false,["mousebehavior"] = Enum.MouseBehavior.Default})
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddDropdown({
+	Name = "Prop Ability",
+	Default = "",
+	Options = {"Barrel", "Bench", "Brick", "Bush 1", "Bush 2", "Cauldron", "Diamond", "Frenzy Bot", "Gift", "GoldenSlapple", "Imp", "Jet Orb", "Larry", "MEGAROCK", "Moai Head", "Obby 1", "Obby 2", "Obby 3", "Obby 4", "Obby 5", "Orange", "Oven", "Phase Heart", "Phase Orb", "Rock 1", "Rock 2", "Rock 3", "Sentry", "Slapple", "Snow Peep", "Snow Turret", "bob", "rob"},
+	Callback = function(Value)
+PropAbility = Value
+	end    
+})
+
+Prop = Tab1:AddButton({
+	Name = "Auto Spam Prop",
+	Callback = function()
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Blink"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(PropAbility)
+task.wait()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+	end    
+})
+Tab1:AddButton({
+	Name = "Beatdown",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Beatdown"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+wait(TBS)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab2:AddButton({
+	Name = "Beatdown All Player",
+	Callback = function()
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Beatdown"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+for i,v in pairs(game.Players:GetPlayers()) do
+game:GetService("ReplicatedStorage").beatdownevent:FireServer("standhit",{["cf"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,["hit"] = v.Character.HumanoidRootPart})
+end
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+  	end    
+})
+})
+Tab1:AddButton({
+	Name = "Whirlwind",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(TBS)
+fireclickdetector(game.Workspace.Lobby["Whirlwind"].ClickDetector)
+wait(TBS)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+wait(TBS)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
