@@ -575,6 +575,26 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab3:AddButton({
+	Name = "Chob",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(0.1)
+fireclickdetector(game.Workspace.Lobby["rob"].ClickDetector)
+wait(0.1)
+game:GetService("ReplicatedStorage").rob:FireServer()
+wait(1)
+fireclickdetector(game.Workspace.Lobby["Cheeky"].ClickDetector)
+wait(2.9)
+game:GetService("ReplicatedStorage").Spherify:FireServer()
+wait(0.1)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab1:AddButton({
 	Name = "Replica",
 	Callback = function()
