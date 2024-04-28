@@ -937,6 +937,11 @@ AutoSpawnDivebomb = Tab1:AddToggle({
 	Name = "Auto Spam Divebomb",
 	Default = false,
 	Callback = function(Value)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+wait(0.1)
+fireclickdetector(game.Workspace.Lobby["Divebomb"].ClickDetector)
+wait(0.1)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(0)
 if DivebombExplosion == nil then
 DivebombExplosion = game.Players.LocalPlayer.Name
 end
@@ -946,6 +951,7 @@ while _G.DivebombSpam and game.Players.LocalPlayer.leaderstats.Glove.Value == "D
 game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["chargeAlpha"] = 99.7833333881571889,["rocketJump"] = true})
 game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["position"] = game.Players[DivebombExplosion].Character.HumanoidRootPart.Position,["explosion"] = true,["explosionAlpha"] = _G.ChargeExplosion})
 task.wait()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 end
 elseif _G.DivebombSpam == true then
 OrionLib:MakeNotification({Name = "Error",Content = "You don't have Divebomb equipped.",Image = "rbxassetid://7733658504",Time = 5})
