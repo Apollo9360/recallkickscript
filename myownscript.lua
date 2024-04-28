@@ -921,7 +921,7 @@ end
   	end    
 })
 Tab1:AddSlider({
-	Name = "Charge Explosion",
+	Name = "Divebomb Charge",
 	Min = 0,
 	Max = 500,
 	Default = 5,
@@ -933,30 +933,18 @@ Tab1:AddSlider({
 	end    
 })
 
-AutoSpawnDivebomb = Tab1:AddToggle({
-	Name = "Auto Spam Divebomb",
-	Default = false,
+AutoSpawnDivebomb = Tab1:AddButton({
+	Name = "Divebomb",
 	Callback = function(Value)
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(0.1)
-fireclickdetector(game.Workspace.Lobby["Divebomb"].ClickDetector)
+fireclickdetector(workspace.Lobby["Divebomb"].ClickDetector)
 wait(0.1)
-game:GetService("ReplicatedStorage").GeneralAbility:FireServer(0)
-if DivebombExplosion == nil then
-DivebombExplosion = game.Players.LocalPlayer.Name
-end
-_G.DivebombSpam = Value
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Divebomb" then
-while _G.DivebombSpam and game.Players.LocalPlayer.leaderstats.Glove.Value == "Divebomb" do
 game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["chargeAlpha"] = 99.7833333881571889,["rocketJump"] = true})
-game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["position"] = game.Players[DivebombExplosion].Character.HumanoidRootPart.Position,["explosion"] = true,["explosionAlpha"] = _G.ChargeExplosion})
-task.wait()
+game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["position"] = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position,["explosion"] = true,["explosionAlpha"] = _G.ChargeExplosion})
+wait(0.1)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-end
-elseif _G.DivebombSpam == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Divebomb equipped.",Image = "rbxassetid://7733658504",Time = 5})
-wait(0.05)
-AutoSpawnDivebomb:Set(false)
 end
 	end    
 })
@@ -999,17 +987,15 @@ Tab1:AddButton({
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(0.1)
-fireclickdetector(game.Workspace.Lobby["Name"].ClickDetector)
+fireclickdetector(game.Workspace.Lobby["Alchemist"].ClickDetector)
 wait(0.1)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
-wait(0.1)
-fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
   	end    
 })
-Tab14:AddDropdown({
+Tab1:AddDropdown({
 	Name = "Potion",
 	Default = "Speed",
 	Options = {"Grug","idIot","Nightmare","Confusion","Power","Paralyzing","Haste","Invisibility","Explosion","Invincible","Toxic","Freeze","Feather","Speed","Lethal","Slow","Antitoxin","Corrupted Vine","Field"},
@@ -1018,7 +1004,7 @@ _G.MakePotion = Value
 	end    
 })
 
-Tab14:AddSlider({
+Tab1:AddSlider({
 	Name = "Medicine Mix Potion",
 	Min = 1,
 	Max = 200,
@@ -1031,7 +1017,7 @@ Tab14:AddSlider({
 	end    
 })
 
-Tab14:AddButton({
+Tab1:AddButton({
 	Name = "Get Potions",
 	Callback = function()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Alchemist" then
@@ -1055,7 +1041,7 @@ end
   	end    
 })
 
-PotionAuto = Tab14:AddToggle({
+PotionAuto = Tab1:AddToggle({
 	Name = "Auto Potion",
 	Default = false,
 	Callback = function(Value)
