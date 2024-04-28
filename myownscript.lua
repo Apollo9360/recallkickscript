@@ -963,7 +963,7 @@ wait(0.1)
 fireclickdetector(game.Workspace.Lobby["Firework"].ClickDetector)
 wait(0.1)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
-wait(0.1)
+wait(5.1)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
