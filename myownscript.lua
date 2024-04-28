@@ -248,13 +248,13 @@ local Tab2 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Tab12 = Window:MakeTab({
+local Tab3 = Window:MakeTab({
 	Name = "Trolling",
 	Icon = "rbxassetid://7733673987",
 	PremiumOnly = false
 })
 
-local Tab3 = Window:MakeTab({
+local Tab4 = Window:MakeTab({
 	Name = "Badges",
 	Icon = "rbxassetid://7733673987",
 	PremiumOnly = false
@@ -1252,5 +1252,62 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab4:AddButton({
+	Name = "Get Glove [Redacted]",
+	Callback = function()
+if game.Players.LocalPlayer.leaderstats.Slaps.Value >= 5000 then
+Door = 0
+for i = 1, 10 do
+Door = Door + 1
+if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2124847850) then
+else
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.PocketDimension.Doors[Door].TouchInterest.Parent, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.PocketDimension.Doors[Door].TouchInterest.Parent, 1)
+wait(3.75)
+end
+end
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have 5000 slap, or you have Owner bagde",Image = "rbxassetid://7733658504",Time = 5})
+end
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Get Duck & Orange & Knife Badge",
+	Callback = function()
+if not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2124760907) and not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2128220957) and not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2124760916) then
+fireclickdetector(game.Workspace.Lobby.Scene.knofe.ClickDetector)
+fireclickdetector(game.Workspace.Arena.island5.Orange.ClickDetector) 
+fireclickdetector(game.Workspace.Arena["default island"]["Rubber Ducky"].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You have Owner badge",Image = "rbxassetid://7733658504",Time = 5})
+end
+  	end 
+})
+
+Tab4:AddButton({
+	Name = "Get Free Ice Skate",
+	Callback = function()
+if not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2906002612987222) then
+game:GetService("ReplicatedStorage").IceSkate:FireServer("Freeze")
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You have Owner badge",Image = "rbxassetid://7733658504",Time = 5})
+end
+  	end 
+})
+
+Tab4:AddButton({
+	Name = "Get Free Lamp",
+	Callback = function()
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and not game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 490455814138437) then
+for i = 1,5 do
+game:GetService("ReplicatedStorage").nightmare:FireServer("LightBroken")
+end
+else
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have ZZZZZZZ equipped, or Owner badge",Image = "rbxassetid://7733658504",Time = 5})
+end
+  	end 
+})
+
 --keep this at the end
 end
