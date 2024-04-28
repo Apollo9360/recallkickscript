@@ -979,7 +979,8 @@ wait(0.1)
 fireclickdetector(game.Workspace.Lobby["Joust"].ClickDetector)
 wait(0.1)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer("Start")
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40
+wait(0.1)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
