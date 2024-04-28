@@ -1392,7 +1392,7 @@ Prop = Tab1:AddButton({
 	Callback = function()
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
-fireclickdetector(game.Workspace.Lobby["Blink"].ClickDetector)
+fireclickdetector(game.Workspace.Lobby["Prop"].ClickDetector)
 wait(TBS)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer(PropAbility)
 task.wait()
