@@ -1429,7 +1429,6 @@ end
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
   	end    
 })
-})
 Tab1:AddButton({
 	Name = "Whirlwind",
 	Callback = function()
