@@ -1410,9 +1410,9 @@ Tab2:AddButton({
 	Name = "😡💢Beatdown All Player",
 	Callback = function()
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-wait(TBS)
+wait(0.1)
 fireclickdetector(game.Workspace.Lobby["Beatdown"].ClickDetector)
-wait(TBS)
+wait(0.0001)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
 for i,v in pairs(game.Players:GetPlayers()) do
   -- Check if the current player is not the local user
