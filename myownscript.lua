@@ -1415,7 +1415,13 @@ fireclickdetector(game.Workspace.Lobby["Beatdown"].ClickDetector)
 wait(TBS)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
 for i,v in pairs(game.Players:GetPlayers()) do
-game:GetService("ReplicatedStorage").beatdownevent:FireServer("standhit",{["cf"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,["hit"] = v.Character.HumanoidRootPart})
+  -- Check if the current player is not the local user
+  if v.Name ~= game.Players.LocalPlayer.Name then
+    game:GetService("ReplicatedStorage").beatdownevent:FireServer("standhit", {
+      ["cf"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,
+      ["hit"] = v.Character.HumanoidRootPart
+    })
+  end
 end
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
   	end    
