@@ -1918,7 +1918,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "☣Plague",
+	Name = "☣Plague(no workeys)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["Plague"].ClickDetector)
@@ -1938,7 +1938,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "✡Cult✡",
+	Name = "✡Cult✡(doesn't count to the count)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["CULT"].ClickDetector)
@@ -1948,7 +1948,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "🤝 Buddies",
+	Name = "🤝 Buddies(doesnt slap)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["buddies"].ClickDetector)
@@ -1968,7 +1968,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "💫Orbit💫",
+	Name = "💫Orbit💫(doesn't even orbit)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["Orbit"].ClickDetector)
@@ -1988,7 +1988,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "🔗Link",
+	Name = "🔗Link(doesn't work)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["Link"].ClickDetector)
