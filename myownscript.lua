@@ -1818,7 +1818,7 @@ end
   	end    
 })
 Tab5:AddButton({
-	Name = "💀Reaper(be careful!)",
+	Name = "💀Reaper(no workeys)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["Reaper"].ClickDetector)
