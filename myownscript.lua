@@ -476,7 +476,7 @@ Tab1:AddTextbox({
 	end	  
 })
 Tab1:AddButton({
-	Name = "Diamond",
+	Name = "💎Diamond",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -492,7 +492,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "ZZZ",
+	Name = "😴💤ZZZ",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -508,7 +508,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Swapper",
+	Name = "🔵↔🔵Swapper",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -524,7 +524,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Ghost",
+	Name = "👻Ghost",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -540,7 +540,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Zaza Hando",
+	Name = "🤚💨Zaza Hando",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -556,7 +556,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Fort",
+	Name = "🧱🧱🧱Fort",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -572,7 +572,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Pusher",
+	Name = "⬛Pusher",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -588,7 +588,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Mail",
+	Name = "📧Mail",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -604,7 +604,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Cheeky",
+	Name = "🔵Cheeky",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -620,7 +620,7 @@ end
   	end    
 })
 Tab3:AddButton({
-	Name = "Chob",
+	Name = "🔵⚪Chob",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -640,7 +640,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Replica",
+	Name = "🧍‍♂️🧍‍♂️Replica",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -656,7 +656,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Reverse",
+	Name = "🚫Reverse",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -672,7 +672,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Shukichi",
+	Name = "💀Shukichi",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -685,6 +685,8 @@ repeat RandomPlayer = players[math.random(1, #players)] until RandomPlayer ~= ga
 Target = RandomPlayer
 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character.Head:FindFirstChild("RedEye") == nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Target.Character.HumanoidRootPart.CFrame
+wait(0.09)
+game:GetService("ReplicatedStorage").SM:FireServer(Target)
 wait(TBS)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
@@ -694,7 +696,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "woah",
+	Name = "🌿woah",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -710,7 +712,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Engineer",
+	Name = "🛠Engineer",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -726,7 +728,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Rocky",
+	Name = "🌑Rocky",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -742,7 +744,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "STOP",
+	Name = "STOP🤚🛑",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -758,7 +760,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Tableflip",
+	Name = "┬─┬ Tableflip",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -774,7 +776,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Shield",
+	Name = "🛡Shield",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -790,7 +792,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Ping Pong",
+	Name = "🏓Ping Pong",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -806,7 +808,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Baller",
+	Name = "🔴Baller",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -822,7 +824,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Home Run",
+	Name = "🏏Home Run",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -839,7 +841,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Slicer",
+	Name = "⚔Slicer",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -856,7 +858,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Excavator",
+	Name = "⛏️Excavator",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -873,7 +875,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Cloud",
+	Name = "☁Cloud",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -889,7 +891,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Gravity",
+	Name = "⏬Gravity",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -905,7 +907,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Jebaited",
+	Name = "🤣Jebaited",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -921,7 +923,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Meteor",
+	Name = "🌑Meteor",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -937,7 +939,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Oven",
+	Name = "🎛️Oven🎛️",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -953,7 +955,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Guardian Angel",
+	Name = "👼Guardian Angel",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -969,7 +971,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Frostbite",
+	Name = "❄🥶❄Frostbite",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -998,7 +1000,7 @@ Tab1:AddSlider({
 })
 
 AutoSpawnDivebomb = Tab1:AddButton({
-	Name = "Divebomb",
+	Name = "💥Divebomb💥",
 	Callback = function(Value)
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
@@ -1013,7 +1015,7 @@ end
 	end    
 })
 Tab1:AddButton({
-	Name = "Firework",
+	Name = "🎆Firework",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1029,7 +1031,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Joust",
+	Name = "🐴Joust",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1046,7 +1048,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Alchemist",
+	Name = "👩‍🔬🧪Alchemist",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1130,7 +1132,7 @@ end
 	end    
 })
 Tab1:AddButton({
-	Name = "rob",
+	Name = "⚪rob",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1146,7 +1148,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Kraken",
+	Name = "🦑Kraken",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1162,7 +1164,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Glitch",
+	Name = "🟪⬛Glitch",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1178,7 +1180,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Dominance",
+	Name = "😡Dominance",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1194,7 +1196,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Shard",
+	Name = "❄❄❄Shard",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1210,7 +1212,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Jet",
+	Name = "✈Jet",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1230,7 +1232,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Bubble",
+	Name = "🧼Bubble",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1246,7 +1248,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Bomb",
+	Name = "💣Bomb",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1264,7 +1266,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Phase",
+	Name = "🖤💜Phase",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1280,7 +1282,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Bus",
+	Name = "🤸‍♂️🚌Bus",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1296,23 +1298,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Phase",
-	Callback = function()
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-wait(TBS)
-fireclickdetector(game.Workspace.Lobby["Phase"].ClickDetector)
-wait(TBS)
-game:GetService("ReplicatedStorage").PhaseA:FireServer()
-wait(TBS)
-fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-else
-OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
-end
-  	end    
-})
-Tab1:AddButton({
-	Name = "God's Hand",
+	Name = "👼God's Hand👼",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1330,7 +1316,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Ferryman",
+	Name = "🛶Ferryman",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1352,7 +1338,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Blackhole",
+	Name = "⚫Blackhole",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1368,7 +1354,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "Blink",
+	Name = "👁Blink",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1393,7 +1379,7 @@ PropAbility = Value
 })
 
 Prop = Tab1:AddButton({
-	Name = "Auto Spam Prop",
+	Name = "🌳Auto Spam Prop",
 	Callback = function()
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
@@ -1405,7 +1391,7 @@ fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 	end    
 })
 Tab1:AddButton({
-	Name = "Beatdown",
+	Name = "🧚‍♀️Beatdown",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1421,7 +1407,7 @@ end
   	end    
 })
 Tab2:AddButton({
-	Name = "Beatdown All Player",
+	Name = "😡💢Beatdown All Player",
 	Callback = function()
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 wait(TBS)
@@ -1435,7 +1421,7 @@ fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
   	end    
 })
 Tab1:AddButton({
-	Name = "Whirlwind",
+	Name = "🌪Whirlwind",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1513,7 +1499,7 @@ Tab2:AddButton({
   	end    
 })
 Tab2:AddTextbox({
-	Name = "Speed Fly",
+	Name = "💨Speed Fly",
 	Default = "Userspeed",
 	TextDisappear = false,
 	Callback = function(Value)
@@ -1578,7 +1564,7 @@ Tab3:AddColorpicker({
 })
 
 Tab3:AddToggle({
-	Name = "ESP Glove",
+	Name = "👁👁ESP Glove",
 	Default = false,
 	Callback = function(Value)
 GloveESP = Value
@@ -1614,7 +1600,7 @@ end
 	end    
 })
 Tab3:AddTextbox({
-	Name = "Kick Player Recall",
+	Name = "🦶Kick Player Recall",
 	Default = "Username",
 	TextDisappear = false,
 	Callback = function(Value)
@@ -1666,7 +1652,7 @@ fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
   	end    
 })
 Tab5:AddSlider({
-	Name = "Reach Slap Aura",
+	Name = "🤚Reach Slap Aura",
 	Min = 10,
 	Max = 50,
 	Default = 25,
@@ -1697,7 +1683,7 @@ SlapAuraCharacter = Value
 })
 
 Tab5:AddToggle({
-	Name = "Slap Aura",
+	Name = "Slap Aura ┗|｀O′|┛",
 	Default = false,
 	Callback = function(Value)
 		SlapAura = Value
