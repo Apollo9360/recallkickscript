@@ -983,12 +983,10 @@ AutoSpawnDivebomb = Tab1:AddButton({
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(workspace.Lobby["Divebomb"].ClickDetector)
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Divebomb" then
 game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["chargeAlpha"] = 99.7833333881571889,["rocketJump"] = true})
 game:GetService("ReplicatedStorage").RocketJump:InvokeServer({["position"] = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position,["explosion"] = true,["explosionAlpha"] = _G.ChargeExplosion})
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-end
 	end    
 })
 Tab1:AddButton({
