@@ -468,12 +468,23 @@ end
   	end    
 })
 Tab1:AddTextbox({
-	Name = "TimeBetweenSwitches",
-	Default = "0.1",
+	Name = "Time Between Switches(change if its not working well)",
+	Default = "0",
 	TextDisappear = false,
 	Callback = function(Value)
 		TBS = Value
 	end	  
+})
+Tab1:AddToggle({
+	Name = "Spam Spin(u need Time Between Switches to 0!",
+	Default = false,
+	Callback = function(Value)
+	spinnywinny = Value
+while spinnywinny do
+fireclickdetector(game.Workspace.Lobby["spin"].ClickDetector)
+wait(0.01)
+end
+	end    
 })
 Tab1:AddButton({
 	Name = "💎Diamond",
@@ -2051,6 +2062,16 @@ end
 })
 Tab5:AddButton({
 	Name = "🤕 Knockoff",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+fireclickdetector(game.Workspace.Lobby["Knockoff"].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab5:AddButton({
+	Name = "🟪⬛Error",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 fireclickdetector(game.Workspace.Lobby["Knockoff"].ClickDetector)
