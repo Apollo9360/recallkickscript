@@ -1074,11 +1074,10 @@ Tab1:AddButton({
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-
 fireclickdetector(game.Workspace.Lobby["Firework"].ClickDetector)
+game:GetService("ReplicatedStorage").Firework:InvokeServer()
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
-
-fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector) 
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1515,6 +1514,13 @@ fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
+  	end    
+})
+Tab4:AddButton({
+	Name = "Get Glove Firework(WALK INTO AN OVEN AFTER!)",
+	Callback = function()
+game.ReplicatedStorage.AlchemistEvent:FireServer("AddItem", "Cake Mix")
+game.ReplicatedStorage.AlchemistEvent:FireServer("EquipItem", "Cake Mix")
   	end    
 })
 Tab4:AddButton({
