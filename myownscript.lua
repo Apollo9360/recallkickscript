@@ -1093,9 +1093,25 @@ if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Joust"].ClickDetector)
-game:GetService("ReplicatedStorage").GeneralAbility:FireServer("Start")
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40
+local args = {
+    [1] = "Start"
+}
 
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab2:AddButton({
+	Name = "🟨Golden Godmode",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby["Golden"].ClickDetector)
+game:GetService("ReplicatedStorage").Goldify:FireServer(true)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
@@ -1365,7 +1381,6 @@ Tab1:AddButton({
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-
 fireclickdetector(game.Workspace.Lobby["Ferryman"].ClickDetector)
 local players = game.Players:GetChildren()
 local randomPlayer = players[math.random(1, #players)]
@@ -1373,10 +1388,9 @@ repeat randomPlayer = players[math.random(1, #players)] until randomPlayer ~= ga
 Target = randomPlayer
 game.Players.LocalPlayer.Character.FerrymanStaff.StaffConfig.AbilityEvent:FireServer("Leap")
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-wait(1.85)
+wait(2)
 fireclickdetector(game.Workspace.Lobby["Ferryman"].ClickDetector)
 game.Players.LocalPlayer.Character.FerrymanStaff.StaffConfig.AbilityEvent:FireServer("FinishLeap",Target.Character.HumanoidRootPart.Position)
-
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
