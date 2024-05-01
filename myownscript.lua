@@ -949,6 +949,18 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab1:AddSlider({
+	Name = "Frostbite Size(MAY BE PATCHED)",
+	Min = 1,
+	Max = 500,
+	Default = 1,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Size",
+	Callback = function(Value)
+		frostbitesize = Value
+	end    
+})
 Tab1:AddButton({
 	Name = "❄🥶❄Frostbite",
 	Callback = function()
@@ -956,7 +968,13 @@ if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Frostbite"].ClickDetector)
-game:GetService("ReplicatedStorage").GeneralAbility:FireServer(0)
+local args = {
+    [1] = frostbitesize
+}
+
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+
+OrionLib:MakeNotification({Name = "e",Content = frostbitesize,Image = "rbxassetid://7733658504",Time = 1})
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
@@ -1394,6 +1412,43 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby["Whirlwind"].ClickDetector)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
 
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddButton({
+	Name = "🐢 Pocket",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Pocket"].ClickDetector)
+local args = {
+    [1] = CFrame.new(0, 0, 0) * CFrame.Angles(0, 90, 0)
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+for i,v in pairs(game.Players:GetPlayers()) do
+game:GetService("ReplicatedStorage").PocketWhitelist:FireServer("add", v)
+end
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddButton({
+	Name = "🟥🟥Obby(NOT WORKING ATM)",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Obby"].ClickDetector)
+
+local args = { 
+[1] = CFrame.new(0, 0, 0) * CFrame.Angles(0, 90, 0) }
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
