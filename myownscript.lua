@@ -1028,6 +1028,7 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Alchemist"].ClickDetector)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1058,13 +1059,16 @@ Tab1:AddSlider({
 Tab1:AddButton({
 	Name = "Get Potions",
 	Callback = function()
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Alchemist" then
 if not game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name.."'s Cauldron") then
+fireclickdetector(game.Workspace.Lobby["Alchemist"].ClickDetector)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 end
 for b = 1, _G.GivePotion do
 if not game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name.."'s Cauldron") then
+fireclickdetector(game.Workspace.Lobby["Alchemist"].ClickDetector)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 end
 wait(0.0000005)
 for i = 1, #_G.GetPotion[_G.MakePotion] do
@@ -1072,9 +1076,6 @@ game.ReplicatedStorage:WaitForChild("AlchemistEvent"):FireServer(unpack({"AddIte
 game.ReplicatedStorage:WaitForChild("AlchemistEvent"):FireServer(unpack({"MixItem", _G.GetPotion[_G.MakePotion][i]}))
 end
 game.ReplicatedStorage:WaitForChild("AlchemistEvent"):FireServer(unpack({"BrewPotion"}))
-end
-else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Alchemist equipped",Image = "rbxassetid://7733658504",Time = 5})
 end
   	end    
 })
@@ -1655,10 +1656,13 @@ pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
 if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
-if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
                 end
 end
 end
@@ -1670,7 +1674,7 @@ for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
 Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude1 then
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+gloveHits[slapaura]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
                     end
 end
                     end
@@ -1685,7 +1689,11 @@ if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("Humanoi
 if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+
                     end
 end
 end
@@ -1697,7 +1705,11 @@ for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
 Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude1 then
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+
                     end
 end
                     end
@@ -1710,7 +1722,7 @@ Tab5:AddButton({
 	Name = "❄Snow",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Snow"].ClickDetector)
+slapaura = "Snow"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1720,7 +1732,7 @@ Tab5:AddButton({
 	Name = "🧲Pull",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Pull"].ClickDetector)
+slapaura = "Pull"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1730,7 +1742,7 @@ Tab5:AddButton({
 	Name = "🐂Bull",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Bull"].ClickDetector)
+slapaura = "Bull"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1740,7 +1752,7 @@ Tab5:AddButton({
 	Name = "🎲Dice",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Dice"].ClickDetector)
+slapaura = "Dice"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1750,7 +1762,7 @@ Tab5:AddButton({
 	Name = "🥏Boomerang",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Boomerang"].ClickDetector)
+slapaura = "Boomerang"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1760,7 +1772,7 @@ Tab5:AddButton({
 	Name = "🦑Squid",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Squid"].ClickDetector)
+slapaura = "Squid"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1770,7 +1782,7 @@ Tab5:AddButton({
 	Name = "💀Reaper(no workeys)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Reaper"].ClickDetector)
+slapaura = "Reaper"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1780,7 +1792,7 @@ Tab5:AddButton({
 	Name = "🔥Killstreak",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Killstreak"].ClickDetector)
+slapaura = "Killstreak"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1790,7 +1802,7 @@ Tab5:AddButton({
 	Name = "🧊Ice",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Ice"].ClickDetector)
+slapaura = "Ice"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1800,7 +1812,7 @@ Tab5:AddButton({
 	Name = "🍬Gummy",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Gummy"].ClickDetector)
+slapaura = "Gummy"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1810,7 +1822,7 @@ Tab5:AddButton({
 	Name = "🚫Blocked",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Blocked"].ClickDetector)
+slapaura = "Blocked"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1820,7 +1832,7 @@ Tab5:AddButton({
 	Name = "👉Divert",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Divert"].ClickDetector)
+slapaura = "Divert"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1830,7 +1842,7 @@ Tab5:AddButton({
 	Name = "⏪Conveyor",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Conveyor"].ClickDetector)
+slapaura = "Conveyor"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1840,7 +1852,7 @@ Tab5:AddButton({
 	Name = "🏃‍♂️💨Booster",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Booster"].ClickDetector)
+slapaura = "Booster"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1850,7 +1862,7 @@ Tab5:AddButton({
 	Name = "😱Nightmare",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Nightmare"].ClickDetector)
+slapaura = "Nightmare"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1860,7 +1872,7 @@ Tab5:AddButton({
 	Name = "😇God's Hand",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["God's Hand"].ClickDetector)
+slapaura = "God's Hand"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1870,7 +1882,7 @@ Tab5:AddButton({
 	Name = "☣Plague(no workeys)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Plague"].ClickDetector)
+slapaura = "Plague"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1880,7 +1892,7 @@ Tab5:AddButton({
 	Name = "🥔 Potato",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["potato"].ClickDetector)
+slapaura = "potato"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1890,7 +1902,7 @@ Tab5:AddButton({
 	Name = "✡Cult✡(doesn't count to the count)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["CULT"].ClickDetector)
+slapaura = "CULT"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1900,7 +1912,7 @@ Tab5:AddButton({
 	Name = "🤝 Buddies(doesnt slap)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["buddies"].ClickDetector)
+slapaura = "buddies"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1910,7 +1922,7 @@ Tab5:AddButton({
 	Name = "🕵️‍♀️ Spy",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Spy"].ClickDetector)
+slapaura = "Spy"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1920,7 +1932,7 @@ Tab5:AddButton({
 	Name = "💫Orbit💫(doesn't even orbit)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Orbit"].ClickDetector)
+slapaura = "Orbit"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1930,7 +1942,7 @@ Tab5:AddButton({
 	Name = "❌Disarm",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Disarm"].ClickDetector)
+slapaura = "Disarm"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1940,7 +1952,7 @@ Tab5:AddButton({
 	Name = "🔗Link(doesn't work)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Link"].ClickDetector)
+slapaura = "Link"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1950,7 +1962,7 @@ Tab5:AddButton({
 	Name = "⛓ Chain",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Chain"].ClickDetector)
+slapaura = "Chain"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1960,7 +1972,7 @@ Tab5:AddButton({
 	Name = "🎰 RNG",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["RNG"].ClickDetector)
+slapaura = "RNG"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1970,7 +1982,7 @@ Tab5:AddButton({
 	Name = "🦮 Leash",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Leash"].ClickDetector)
+slapaura = "Leash"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1980,7 +1992,7 @@ Tab5:AddButton({
 	Name = "🔨 Hammer",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Hammer"].ClickDetector)
+slapaura = "Hammer"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -1990,7 +2002,7 @@ Tab5:AddButton({
 	Name = "🎹 Blasphemy",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Blasphemy"].ClickDetector)
+slapaura = "Blasphemy"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -2000,7 +2012,7 @@ Tab5:AddButton({
 	Name = "⛓️👮 Admin",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Admin"].ClickDetector)
+slapaura = "Admin"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -2010,7 +2022,7 @@ Tab5:AddButton({
 	Name = "🤕 Knockoff",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Knockoff"].ClickDetector)
+slapaura = "Knockoff"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -2020,7 +2032,27 @@ Tab5:AddButton({
 	Name = "🟪⬛Error",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-fireclickdetector(game.Workspace.Lobby["Error"].ClickDetector)
+slapaura = "Error"
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab5:AddButton({
+	Name = "🎈🎈🎈 Balloony",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+slapaura = "Balloony"
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab5:AddButton({
+	Name = "🐔Chicken🐔",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+slapaura = "Chicken"
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
