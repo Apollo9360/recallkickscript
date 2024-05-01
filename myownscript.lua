@@ -1718,6 +1718,7 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
 gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
                 end
 end
 end
@@ -1729,8 +1730,11 @@ for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
 Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude1 then
-gloveHits[slapaura]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
-                    end
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)                    end
 end
                     end
 end)
@@ -1748,6 +1752,7 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
 gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
 
                     end
 end
@@ -1762,14 +1767,15 @@ Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.H
                         if _G.ReachSlapArua >= Magnitude1 then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
 
                     end
 end
                     end
 end)
-task.wait(.1)
+task.wait(.3)
 end
 	end    
 })
