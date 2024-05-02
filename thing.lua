@@ -1847,7 +1847,7 @@ else
 OrionLib:MakeNotification({Name = "Error",Content = "You got Bob spawn",Image = "rbxassetid://7733658504",Time = 5})
 GetBob:Set(false)
 end
-task.wait(5.3)
+task.wait(5.7)
 end
 while _G.AutoFarmBob and Autobob == "Fast Spawn" do
 repeat task.wait() until game.Players.LocalPlayer.Character
