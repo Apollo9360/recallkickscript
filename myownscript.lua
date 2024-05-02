@@ -590,6 +590,8 @@ fireclickdetector(workspace.Lobby["Pocket"].ClickDetector)
 wait(4.8)
 fireclickdetector(workspace.Lobby["bob"].ClickDetector)
 game:GetService("ReplicatedStorage").bob:FireServer()
+fireclickdetector(game.Workspace.Lobby["Prop"].ClickDetector)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer("Snow Peep")
 fireclickdetector(workspace.Lobby["Pocket"].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
