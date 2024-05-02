@@ -598,6 +598,51 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab3:AddSlider({
+	Name = "Extend HitBox Rob",
+	Min = 5,
+	Max = 300,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Extend",
+	Callback = function(Value)
+		_G.ExtendHitboxRob = Value
+	end    
+})
+
+Tab3:AddColorpicker({
+	Name = "Color Hitbox Rob",
+	Default = Color3.fromRGB(255, 255, 255),
+	Callback = function(Value)
+		_G.ColorHitboxRob = Value
+	end	  
+})
+
+Tab3:AddToggle({
+	Name = "Hitbox All Rob & Color",
+	Default = false,
+	Callback = function(Value)
+_G.HitboxRob = Value
+while _G.HitboxRob do
+for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "Field" then
+                        v.Size = Vector3.new(_G.ExtendHitboxRob,_G.ExtendHitboxRob,_G.ExtendHitboxRob)
+                        v.BrickColor = BrickColor.new(_G.ColorHitboxRob)
+                    end
+                end
+task.wait()
+end
+if _G.HitboxRob == false then
+for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "Field" then
+                        v.Size = Vector3.new(16,16,16)
+                        v.BrickColor = BrickColor.new(255,255,255)
+                    end
+                end
+end
+	end    
+})
 Tab1:AddButton({
 	Name = "😴💤ZZZ",
 	Callback = function()
