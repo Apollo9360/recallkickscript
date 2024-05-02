@@ -563,6 +563,39 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab3:AddButton({
+	Name = "😵 Anti Suspicion",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+fireclickdetector(game.Workspace.Lobby["Pocket"].ClickDetector)
+local args = {
+    [1] = CFrame.new(-10, -8, -105) * CFrame.Angles(-1.5707963705062866, 2.3746311583749957e-08, 1.1186652183532715)
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab3:AddButton({
+	Name = "⚫🟣 Null Portal(u need bob and rob)",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+fireclickdetector(game.Workspace.Lobby["Prop"].ClickDetector)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer("Snow Peep")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,10,0)
+fireclickdetector(workspace.Lobby["rob"].ClickDetector)
+game:GetService("ReplicatedStorage").rob:FireServer()
+fireclickdetector(workspace.Lobby["Pocket"].ClickDetector)
+wait(4.8)
+fireclickdetector(workspace.Lobby["bob"].ClickDetector)
+game:GetService("ReplicatedStorage").bob:FireServer()
+fireclickdetector(workspace.Lobby["Pocket"].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab1:AddButton({
 	Name = "😴💤ZZZ",
 	Callback = function()
