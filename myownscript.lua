@@ -1632,6 +1632,8 @@ fireclickdetector(v.Click.ClickDetector, 0)
 fireclickdetector(v.Click.ClickDetector, 1)
 end
 end
+else
+OrionLib:MakeNotification({Name = "Error",Content = "enter the portal",Image = "rbxassetid://7733658504",Time = 1})
 end
 task.wait()
 end
