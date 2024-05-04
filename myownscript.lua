@@ -1597,15 +1597,21 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "🟥🟥Obby(NOT WORKING ATM)",
+	Name = "🤑Tycoon(activates 3s after click)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-
-fireclickdetector(game.Workspace.Lobby["Obby"].ClickDetector)
-
-local args = { 
-[1] = CFrame.new(0, 0, 0) * CFrame.Angles(0, 90, 0) }
+fireclickdetector(game.Workspace.Lobby["Tycoon"].ClickDetector)
+local args = {
+    [1] = CFrame.new(3606.696533203125, 80.00886535644531, -396.834716796875) * CFrame.Angles(-3.108207735635915e-08, 0.001000060117803514, 3.4798517400957962e-09)
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(3)
+fireclickdetector(game.Workspace.Lobby["Tycoon"].ClickDetector)
+local args = {
+    [1] = CFrame.new(3606.696533203125, 80.00886535644531, -396.834716796875) * CFrame.Angles(-3.108207735635915e-08, 0.001000060117803514, 3.4798517400957962e-09)
+}
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
@@ -1613,6 +1619,25 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab1:AddToggle({
+	Name = "Auto Click Tycoon",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoClickTycoon = Value
+while _G.AutoClickTycoon do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == true then
+for _, v in pairs(game.Workspace:GetChildren()) do
+if string.find(v.Name, "ÅTycoon") and v:FindFirstChild("Click") then
+fireclickdetector(v.Click.ClickDetector, 0)
+fireclickdetector(v.Click.ClickDetector, 1)
+end
+end
+end
+task.wait()
+end
+	end    
+})
+
 Tab4:AddButton({
 	Name = "Get Glove Firework(WALK INTO AN OVEN AFTER!)",
 	Callback = function()
