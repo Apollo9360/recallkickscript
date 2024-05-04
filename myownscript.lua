@@ -1625,7 +1625,7 @@ Tab1:AddToggle({
 	Callback = function(Value)
 		_G.AutoClickTycoon = Value
 while _G.AutoClickTycoon do
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") == true then
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") ~= nil then
 for _, v in pairs(game.Workspace:GetChildren()) do
 if string.find(v.Name, "ÅTycoon") and v:FindFirstChild("Click") then
 fireclickdetector(v.Click.ClickDetector, 0)
