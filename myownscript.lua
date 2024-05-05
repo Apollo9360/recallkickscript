@@ -1644,10 +1644,8 @@ Tab1:AddButton({
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-
 fireclickdetector(game.Workspace.Lobby["Sbeve"].ClickDetector)
 game:GetService("ReplicatedStorage").KrakenArm:FireServer()
-end
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
