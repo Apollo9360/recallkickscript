@@ -292,7 +292,12 @@ local Tab4 = Window:MakeTab({
 })
 local Tab5 = Window:MakeTab({
 	Name = "Passives(:O)",
-	Icon = "rbxassetid://7734056608",
+	Icon = "rbxassetid://4335489011",
+	PremiumOnly = false
+})
+local Tab6 = Window:MakeTab({
+	Name = "Any Glove Abils",
+	Icon = "rbxassetid://7733917120",
 	PremiumOnly = false
 })
 Tab2:AddDropdown({
@@ -2322,6 +2327,104 @@ else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
   	end    
+})
+Tab6:AddDropdown({
+	Name = "Admin Ability",
+	Default = "Fling",
+	Options = {"Fling", "Anvil", "Invisibility"},
+	Callback = function(Value)
+AbilityAdmin = Value
+	end    
+})
+
+Admin = Tab6:AddToggle({
+	Name = "Auto Spam Admin [ All Glove ]",
+	Default = false,
+	Callback = function(Value)
+AdminSpam = Value
+while AdminSpam do
+game:GetService("ReplicatedStorage").AdminAbility:FireServer(AbilityAdmin)
+task.wait()
+end
+	end    
+})
+
+Tab6:AddDropdown({
+	Name = "Retro Ability",
+	Default = "Rocket Launcher",
+	Options = {"Rocket Launcher", "Ban Hammer", "Bomb"},
+	Callback = function(Value)
+RetroAbility = Value
+	end    
+})
+
+Tab6:AddToggle({
+	Name = "Auto Spam Retro [ All Glove ]",
+	Default = false,
+	Callback = function(Value)
+RetroSpam = Value
+while RetroSpam do
+game:GetService("ReplicatedStorage").RetroAbility:FireServer(RetroAbility)
+task.wait()
+end
+	end    
+})
+
+Tab6:AddToggle({
+	Name = "All Three Retro",
+	Default = false,
+	Callback = function(Value)
+RetroSpam = Value
+while RetroSpam do
+game:GetService("ReplicatedStorage").RetroAbility:FireServer("Rocket Launcher")
+game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
+game:GetService("ReplicatedStorage").RetroAbility:FireServer("Bomb")
+task.wait()
+end
+	end    
+})
+
+Tab6:AddDropdown({
+	Name = "Slapstick Ability",
+	Default = "runeffect",
+	Options = {"runeffect", "fullcharged", "dash", "addarm","charge","cancelrun","discharge"},
+	Callback = function(Value)
+SlapstickAbility = Value
+	end    
+})
+
+Tab6:AddButton({
+	Name = "Spam Ability Slapstick",
+	Callback = function()
+game:GetService("ReplicatedStorage").slapstick:FireServer("addarm")
+game:GetService("ReplicatedStorage").slapstick:FireServer(SlapstickAbility)
+  	end    
+})
+
+Tab6:AddToggle({
+	Name = "Auto Spam Slapstick [ All Glove ]",
+	Default = false,
+	Callback = function(Value)
+SlapstickSpam = Value
+if SlapstickSpam == true then
+game:GetService("ReplicatedStorage").slapstick:FireServer("addarm")
+end
+while SlapstickSpam do
+game:GetService("ReplicatedStorage").slapstick:FireServer(SlapstickAbility)
+task.wait()
+end
+	end    
+})
+Tab14:AddToggle({
+	Name = "Auto Spam Rojo [ All Glove ]",
+	Default = false,
+	Callback = function(Value)
+if Person == nil then
+Person = game.Players.LocalPlayer.Name
+end
+game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players[Person].Character.HumanoidRootPart.CFrame})
+task.wait()
+	end    
 })
 --keep this at the end
 end
