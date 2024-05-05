@@ -2028,7 +2028,7 @@ end
 task.wait()
 while _G.AutoTimeGet and AutoTime == "Voodoo" do
 task.wait(1)
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" and game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 1 then
+if game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 1 then
 TimeGhost += 1
 FarmTimeServer:Set("Farm Time [ "..TimeGhost.." ] | [ "..(3600 - TimeGhost).." ]")
 elseif game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 0 then
