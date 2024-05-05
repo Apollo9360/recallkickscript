@@ -1996,7 +1996,7 @@ Tab3:AddToggle({
 	Callback = function(Value)
 _G.AutoTimeGet = Value
 if AutoTime == "Fish" and Value == true then
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["SafeBox"].CFrame * CFrame.new(0,5,0)
 game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
 end
@@ -2006,7 +2006,7 @@ FarmTimeServer:Set("Farm Time [ 0 ]")
 end
 task.wait()
 while _G.AutoTimeGet and AutoTime == "Fish" and task.wait() do
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled").Value == true then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ" and game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled").Value == true then
 task.wait(1)
 SleepTime += 1
 FarmTimeServer:Set("Farm Time [ "..SleepTime.." ] | [ "..(3600 - SleepTime).." ]")
@@ -2016,7 +2016,7 @@ FarmTimeServer:Set("Farm Time [ 0 ]")
 end
 end
 if AutoTime == "Voodoo" and Value == true then
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace["SafeBox"].CFrame * CFrame.new(0,5,0)
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 end
@@ -2028,7 +2028,7 @@ end
 task.wait()
 while _G.AutoTimeGet and AutoTime == "Voodoo" do
 task.wait(1)
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 1 then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost" and game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 1 then
 TimeGhost += 1
 FarmTimeServer:Set("Farm Time [ "..TimeGhost.." ] | [ "..(3600 - TimeGhost).." ]")
 elseif game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil and game.Players.LocalPlayer.Character.HumanoidRootPart.Transparency == 0 then
@@ -2037,11 +2037,11 @@ FarmTimeServer:Set("Farm Time [ 0 ]")
 end
 end
 if AutoTime == "MegaRock" and Value == true then
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" then
 game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
 end
 elseif AutoTime ~= "MegaRock" or Value == false then
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil or game.Players.LocalPlayer.Character:FindFirstChild("rock") ~= nil then
+if game.Players.LocalPlayer.Character:FindFirstChild("rock") ~= nil then
 game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
 TimeMegarock = 0
 FarmTimeServer:Set("Farm Time [ 0 ]")
@@ -2050,7 +2050,7 @@ end
 task.wait()
 while _G.AutoTimeGet and AutoTime == "MegaRock" do
 task.wait(1)
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" and game.Players.LocalPlayer.Character:FindFirstChild("entered") and game.Players.LocalPlayer.Character:FindFirstChild("rock") then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond" and game.Players.LocalPlayer.Character:FindFirstChild("rock") then
 TimeMegarock += 1
 FarmTimeServer:Set("Farm Time [ "..TimeMegarock.." ] | [ "..(900 - TimeMegarock).." | "..(36000 - TimeMegarock).." ]")
 elseif game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil or game.Players.LocalPlayer.Character:FindFirstChild("rock") == nil then
