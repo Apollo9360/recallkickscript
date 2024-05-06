@@ -2415,7 +2415,7 @@ task.wait()
 end
 	end    
 })
-Tab14:AddToggle({
+Tab6:AddToggle({
 	Name = "Auto Spam Rojo [ All Glove ]",
 	Default = false,
 	Callback = function(Value)
