@@ -2419,11 +2419,12 @@ Tab6:AddToggle({
 	Name = "Auto Spam Rojo [ All Glove ]",
 	Default = false,
 	Callback = function(Value)
-if Person == nil then
 Person = game.Players.LocalPlayer.Name
-end
+if value == true then
 game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players[Person].Character.HumanoidRootPart.CFrame})
 task.wait()
+end
+
 	end    
 })
 --keep this at the end
