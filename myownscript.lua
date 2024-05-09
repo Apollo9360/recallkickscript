@@ -2419,8 +2419,6 @@ Tab6:AddToggle({
 	Name = "Auto Spam Rojo [ All Glove ]",
 	Default = false,
 	Callback = function(Value)
-Person = game.Players.LocalPlayer.Name
-if value == true then
 local args = {
     [1] = "Release",
     [2] = {
@@ -2430,8 +2428,6 @@ local args = {
 
 game:GetService("ReplicatedStorage").RojoAbility:FireServer(unpack(args))
 task.wait()
-end
-
 	end    
 })
 --keep this at the end
