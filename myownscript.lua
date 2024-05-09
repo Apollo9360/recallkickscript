@@ -2415,10 +2415,9 @@ task.wait()
 end
 	end    
 })
-Tab6:AddToggle({
+Tab6:AddButton({
 	Name = "Auto Spam Rojo [ All Glove ]",
-	Default = false,
-	Callback = function(Value)
+	Callback = function()
 local args = {
     [1] = "Release",
     [2] = {
