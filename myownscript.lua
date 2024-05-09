@@ -2421,7 +2421,14 @@ Tab6:AddToggle({
 	Callback = function(Value)
 Person = game.Players.LocalPlayer.Name
 if value == true then
-game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players[Person].Character.HumanoidRootPart.CFrame})
+local args = {
+    [1] = "Release",
+    [2] = {
+        [1] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    }
+}
+
+game:GetService("ReplicatedStorage").RojoAbility:FireServer(unpack(args))
 task.wait()
 end
 
