@@ -1583,6 +1583,46 @@ end
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
   	end    
 })
+Tab2:AddTextbox({
+	Name = "Beatdown Player",
+	Default = "Username",
+	TextDisappear = false,
+	Callback = function(Value)
+if Value == "Me" or Value == "me" or Value == "Username" or Value == "" then
+BeatdownPlayer = game.Players.LocalPlayer.Name
+else
+local targetAbbreviation = Value
+local targetPlayer
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer = v
+break
+end
+end
+if targetPlayer then
+BeatdownPlayer = targetPlayer.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..BeatdownPlayer.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+end
+	end	  
+})
+
+BeatdownPlayerGet = Tab2:AddButton({
+	Name = "Beatdown Player",
+	Callback = function()
+if BeatdownPlayer == nil then
+BeatdownPlayer = game.Players.LocalPlayer.Name
+end
+BeatdownSpam = Value
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby["Beatdown"].ClickDetector)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+game:GetService("ReplicatedStorage").beatdownevent:FireServer("standhit",{["cf"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame,["hit"] = game.Players[BeatdownPlayer].Character.HumanoidRootPart})
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+	end    
+})
 Tab1:AddButton({
 	Name = "🌪Whirlwind",
 	Callback = function()
