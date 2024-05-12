@@ -1480,7 +1480,7 @@ Tab1:AddButton({
 	Name = "🛶Ferryman",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-if randomPlayer.Character:FindFirstChild("entered") -= nil then
+if randomPlayer.Character:FindFirstChild("entered") ~= nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby["Ferryman"].ClickDetector)
 local players = game.Players:GetChildren()
