@@ -1623,6 +1623,46 @@ game:GetService("ReplicatedStorage").beatdownevent:FireServer("standhit",{["cf"]
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 	end    
 })
+Tab2:AddTextbox({
+	Name = "Player To Bless",
+	Default = "Username",
+	TextDisappear = false,
+	Callback = function(Value)
+if Value == "Me" or Value == "me" or Value == "Username" or Value == "" then
+GodmodePlayer = game.Players.LocalPlayer.Name
+else
+local targetAbbreviation = Value
+local targetPlayer
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer = v
+break
+end
+end
+if targetPlayer then
+GodmodePlayer = targetPlayer.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..BeatdownPlayer.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+end
+	end	  
+})
+Tab2:AddButton({
+	Name = "👼Guardian Angel Player",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Guardian Angel"].ClickDetector)
+game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
+
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab1:AddButton({
 	Name = "🌪Whirlwind",
 	Callback = function()
