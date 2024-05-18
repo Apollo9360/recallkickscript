@@ -153,7 +153,6 @@ gloveHits = {
     ["Speedrun"] = game.ReplicatedStorage.Speedrunhit,
     ["Mail"] = game.ReplicatedStorage.MailHit,
     ["Golden"] = game.ReplicatedStorage.GoldenHit,
-    ["Cheeky"] = game.ReplicatedStorage.CheekyHit,
     ["Reaper"] = game.ReplicatedStorage.ReaperHit,
     ["Replica"] = game.ReplicatedStorage.ReplicaHit,
     ["Defense"] = game.ReplicatedStorage.DefenseHit,
@@ -5212,10 +5211,6 @@ task.wait()
 end
 while On and game.Players.LocalPlayer.leaderstats.Glove.Value == "Parry" do
 game.ReplicatedStorage.GeneralAbility:FireServer()
-task.wait()
-end
-while On and game.Players.LocalPlayer.leaderstats.Glove.Value == "Cheeky" do
-game:GetService("ReplicatedStorage").Spherify:FireServer()
 task.wait()
 end
 while On and game.Players.LocalPlayer.leaderstats.Glove.Value == "Druid" do
