@@ -299,6 +299,11 @@ local Tab6 = Window:MakeTab({
 	Icon = "rbxassetid://7733917120",
 	PremiumOnly = false
 })
+local Tab7 = Window:MakeTab({
+	Name = "Solara(doodoofard) test",
+	Icon = "rbxassetid://7733917120",
+	PremiumOnly = false
+})
 Tab2:AddDropdown({
 	Name = "Godmode",
 	Default = "",
@@ -684,6 +689,22 @@ if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Ghost"].ClickDetector)
+game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
+
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab7:AddButton({
+	Name = "👻Ghost",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Ghost"].ClickDetector)
+wait(0)
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
@@ -2183,20 +2204,27 @@ task.wait(.3)
 end
 	end    
 })
-Tab5:AddToggle({
-	Name = "⬛🟪Error Aura(TEST)",
+Tab7:AddToggle({
+	Name = "Slap Aura Solara",
 	Default = false,
 	Callback = function(Value)
-		SlapError = Value
-while SlapError and SlapAuraFriend == "Fight" do
+		SlapAura = Value
+while SlapAura and SlapAuraFriend == "Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
 if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
-game.ReplicatedStorage.Errorhit:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+wait(0)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
                 end
+end
 end
 end
                 end
@@ -2206,8 +2234,12 @@ for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
 Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude1 then
-game.ReplicatedStorage.Errorhit:FireServer(c:WaitForChild(SlapAuraCharacter),true)
-                    end
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+wait(0)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)                    end
 end
                     end
 end)
@@ -2218,10 +2250,18 @@ pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
 if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and not game.Players.LocalPlayer:IsFriendsWith(v.UserId) and v.Character.Ragdolled.Value == false then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
-game.ReplicatedStorage.Errorhit:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+wait(0)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
+
                     end
+end
 end
 end
                 end
@@ -2231,12 +2271,58 @@ for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
 Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude1 then
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+wait(0)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(0.1)
+
                     end
 end
                     end
 end)
-task.wait(.1)
+task.wait(.3)
+end
+	end    
+})
+Tab5:AddSlider({
+	Name = "HipHeight AutoFarm Slap",
+	Min = 0,
+	Max = 20,
+	Default = 0,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Hip",
+	Callback = function(Value)
+		_G.HipAutoFarmSlap = Value
+	end    
+})
+
+Tab5:AddToggle({
+	Name = "AutoFarm Slap(WITH CUSTOM HIT EFFECT XD)",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoFarmSlap = Value
+while _G.AutoFarmSlap do
+pcall(function()
+for i,v in next, game.Players:GetChildren() do
+if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") and v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
+task.wait(0.5)
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
+task.wait(0.43)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
+end
+end
+end
+end
+end)
+task.wait()
 end
 	end    
 })
