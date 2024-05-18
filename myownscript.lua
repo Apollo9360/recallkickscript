@@ -1782,6 +1782,24 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab1:AddButton({
+	Name = "⛰ Golem",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Golem"].ClickDetector)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+local args = {
+    [1] = "release"
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab4:AddButton({
 	Name = "Get Glove Firework(WALK INTO AN OVEN AFTER!)",
 	Callback = function()
