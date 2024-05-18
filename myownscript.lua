@@ -1517,6 +1517,7 @@ Tab1:AddSlider({
 	Name = "Blackhole X",
 	Min = -50,
 	Max = 50,
+	Default = 0,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 0.1,
 	ValueName = "BHX",
@@ -1527,6 +1528,7 @@ Tab1:AddSlider({
 	Name = "Blackhole Y",
 	Min = -50,
 	Max = 50,
+	Default = 0,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 0.1,
 	ValueName = "BHY",
@@ -1537,6 +1539,7 @@ Tab1:AddSlider({
 	Name = "Blackhole Z",
 	Min = -50,
 	Max = 50,
+	Default = 0,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 0.1,
 	ValueName = "BHZ",
@@ -1557,9 +1560,7 @@ game:GetService("ReplicatedStorage").Blackhole:FireServer(unpack(args))
 task.wait(0.1)
 end
 while ControlBH do
-print(BHX)
-print(BHY
-print(BHZ)
+OrionLib:MakeNotification({Name = "Coordinated",Content = BHX,Image = "rbxassetid://7733658504",Time = 1})
 task.wait(1)
 end
 	end    
