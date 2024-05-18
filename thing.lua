@@ -4855,6 +4855,9 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFir
 task.wait(0.5)
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
 task.wait(0.43)
+else
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
 end
 end
 end
