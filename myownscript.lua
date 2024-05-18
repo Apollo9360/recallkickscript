@@ -1513,6 +1513,51 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab1:AddSlider({
+	Name = "Blackhole X",
+	Min = -50,
+	Max = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.1,
+	ValueName = "BHX",
+	Callback = function(Value)
+	end    
+})
+Tab1:AddSlider({
+	Name = "Blackhole Y",
+	Min = -50,
+	Max = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.1,
+	ValueName = "BHY",
+	Callback = function(Value)
+	end    
+})
+Tab1:AddSlider({
+	Name = "Blackhole Z",
+	Min = -50,
+	Max = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 0.1,
+	ValueName = "BHZ",
+	Callback = function(Value)
+	end    
+})
+Tab6:AddToggle({
+	Name = "Control Blackhole",
+	Default = false,
+	Callback = function(Value)
+ControlBH = Value
+while ControlBH do
+local args = {
+    [1] = CFrame.new(BHX, BHY, BHZ) * CFrame.Angles(0, 0, 0)
+}
+
+game:GetService("ReplicatedStorage").Blackhole:FireServer(unpack(args))
+task.wait(0.1)
+end
+	end    
+})
 Tab1:AddButton({
 	Name = "👁Blink",
 	Callback = function()
