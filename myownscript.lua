@@ -1543,7 +1543,7 @@ Tab1:AddSlider({
 	Callback = function(Value)
 	end    
 })
-Tab6:AddToggle({
+Tab1:AddToggle({
 	Name = "Control Blackhole",
 	Default = false,
 	Callback = function(Value)
@@ -1555,6 +1555,12 @@ local args = {
 
 game:GetService("ReplicatedStorage").Blackhole:FireServer(unpack(args))
 task.wait(0.1)
+end
+while ControlBH do
+print(BHX)
+print(BHY
+print(BHZ)
+task.wait(1)
 end
 	end    
 })
