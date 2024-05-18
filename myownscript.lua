@@ -759,7 +759,7 @@ if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["MR"].ClickDetector)
-game:GetService("ReplicatedStorage").MRify:FireServer()
+game:GetService("ReplicatedStorage").Spherify:FireServer()
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
