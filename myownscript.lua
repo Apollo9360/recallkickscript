@@ -154,7 +154,6 @@ gloveHits = {
     ["Speedrun"] = game.ReplicatedStorage.Speedrunhit,
     ["Mail"] = game.ReplicatedStorage.MailHit,
     ["Golden"] = game.ReplicatedStorage.GoldenHit,
-    ["Cheeky"] = game.ReplicatedStorage.CheekyHit,
     ["Reaper"] = game.ReplicatedStorage.ReaperHit,
     ["Replica"] = game.ReplicatedStorage.ReplicaHit,
     ["Defense"] = game.ReplicatedStorage.DefenseHit,
@@ -754,13 +753,13 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "🔵Cheeky",
+	Name = "🔵Cheeky/Mr",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
-fireclickdetector(game.Workspace.Lobby["Cheeky"].ClickDetector)
-game:GetService("ReplicatedStorage").Spherify:FireServer()
+fireclickdetector(game.Workspace.Lobby["MR"].ClickDetector)
+game:GetService("ReplicatedStorage").MRify:FireServer()
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
