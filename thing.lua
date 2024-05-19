@@ -5740,7 +5740,7 @@ end
 	end    
 })
 Tab7:AddToggle({
-	Name = "Slap Aura Reverse",
+	Name = "Slap Aura Reverse(omg no more sussy behavior kicks if u hit a reverser)",
 	Default = false,
 	Callback = function(Value)
 		SlapAura = Value
@@ -5767,7 +5767,6 @@ gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitFor
 end
                     end
 end)
-task.wait(.1)
 end
 while SlapAura and SlapAuraFriend == "Not Fight" do
 pcall(function()
@@ -5793,7 +5792,6 @@ gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitFor
 end
                     end
 end)
-task.wait(.1)
 end
 	end  
 })
