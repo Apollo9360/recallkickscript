@@ -5740,7 +5740,6 @@ end
 	end    
 })
 Tab7:AddToggle({
-Tab7:AddToggle({
 	Name = "Slap Aura Reverse",
 	Name = "Slap Aura Reverse(omg no more sussy behavior kicks if u hit a reverser)",
 	Default = false,
