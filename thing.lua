@@ -5739,7 +5739,30 @@ task.wait(.1)
 end
 	end    
 })
-
+Tab7:AddToggle({
+	Name = "Slap Aura Reverse",
+	Default = false,
+	Callback = function(Value)
+		SlapAura = Value
+while SlapAura do
+for i,v in next, game.Players:GetChildren() do
+if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+if _G.ReachSlapArua >= Magnitude then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+wait(0.8)
+else
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+end
+end
+end
+end
+end
+end
+end
+})
 Tab7:AddSlider({
 	Name = "Reach Shukuchi",
 	Min = 1,
