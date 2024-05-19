@@ -5690,7 +5690,7 @@ while SlapAura and SlapAuraFriend == "Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
-if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
@@ -5740,6 +5740,8 @@ end
 	end    
 })
 Tab7:AddToggle({
+Tab7:AddToggle({
+	Name = "Slap Aura Reverse",
 	Name = "Slap Aura Reverse(omg no more sussy behavior kicks if u hit a reverser)",
 	Default = false,
 	Callback = function(Value)
@@ -5767,8 +5769,8 @@ gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitFor
 end
                     end
 end)
-end
 task.wait(.01)
+end
 while SlapAura and SlapAuraFriend == "Not Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
@@ -5779,11 +5781,9 @@ Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Ch
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
                     end
 end
-
 end
                 end
 end)
-task.wait(.01)
 pcall(function()
 for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
@@ -5794,6 +5794,7 @@ gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitFor
 end
                     end
 end)
+task.wait(.01)
 end
 	end  
 })
