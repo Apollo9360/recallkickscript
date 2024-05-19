@@ -5744,8 +5744,8 @@ Tab7:AddToggle({
 	Name = "Slap Aura Reverse(omg no more sussy behavior kicks if u hit a reverser)",
 	Default = false,
 	Callback = function(Value)
-		SlapAura = Value
-while SlapAura and SlapAuraFriend == "Fight" do
+		SlapAuraR = Value
+while SlapAuraR and SlapAuraFriend == "Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
@@ -5770,7 +5770,7 @@ end
 end)
 task.wait(.01)
 end
-while SlapAura and SlapAuraFriend == "Not Fight" do
+while SlapAuraR and SlapAuraFriend == "Not Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
