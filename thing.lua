@@ -5768,6 +5768,7 @@ end
                     end
 end)
 end
+task.wait(.01)
 while SlapAura and SlapAuraFriend == "Not Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
@@ -5782,6 +5783,7 @@ end
 end
                 end
 end)
+task.wait(.01)
 pcall(function()
 for _, c in pairs(workspace:GetChildren()) do
 if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
