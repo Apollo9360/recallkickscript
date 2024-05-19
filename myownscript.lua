@@ -1496,6 +1496,27 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
+Tab1:AddToggle({
+	Name = "👼Spam Gods Abil👼",
+	Default = false,
+	Callback = function(Value)
+	spamgods = Value
+while spamgods do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby["God's Hand"].ClickDetector)
+game:GetService("ReplicatedStorage").TimestopJump:FireServer()
+game:GetService("ReplicatedStorage").Timestopchoir:FireServer()
+game:GetService("ReplicatedStorage").Timestop:FireServer()
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(51)
+else
+OrionLib:MakeNotification({Name = "Spam Gods Abil",Content = "turn this off or dont enter arena",Image = "rbxassetid://7733658504",Time = 0.5})
+wait(1)
+end
+end
+	end    
+})
 Tab1:AddButton({
 	Name = "🛶Ferryman",
 	Callback = function()
@@ -2307,8 +2328,8 @@ Tab5:AddToggle({
 while _G.AutoFarmSlap do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
-if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") and v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+if v ~= game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if and v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
 if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
 task.wait(0.5)
