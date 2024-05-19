@@ -2333,11 +2333,17 @@ if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("Humanoi
 if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove.Value == "Error" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
 task.wait(0.5)
-gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 task.wait(0.43)
 else
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,_G.HipAutoFarmSlap,0)
-gloveHits[slapaura]:FireServer(v.Character:WaitForChild("HumanoidRootPart"),true)
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby[slapaura].ClickDetector)
+gloveHits[slapaura]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 end
 end
 end
