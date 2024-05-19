@@ -5715,7 +5715,7 @@ while SlapAura and SlapAuraFriend == "Not Fight" do
 pcall(function()
 for i,v in next, game.Players:GetChildren() do
                     if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
-if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and not game.Players.LocalPlayer:IsFriendsWith(v.UserId) and v.Character.Ragdolled.Value == false then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and not game.Players.LocalPlayer:IsFriendsWith(v.UserId) then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
                         if _G.ReachSlapArua >= Magnitude then
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
@@ -5744,36 +5744,58 @@ Tab7:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		SlapAura = Value
-while SlapAura do
+while SlapAura and SlapAuraFriend == "Fight" do
+pcall(function()
 for i,v in next, game.Players:GetChildren() do
-if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
-if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and v.Character.Ragdolled.Value == false then
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") then
 Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
-if _G.ReachSlapArua >= Magnitude then
-if v.Character.Head:FindFirstChild("UnoReverseCard") == nil then
+                        if _G.ReachSlapArua >= Magnitude then
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
-wait(0.8)
-else
+                end
+end
+end
+                end
+end)
+pcall(function()
+for _, c in pairs(workspace:GetChildren()) do
+if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
+Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude1 then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+                    end
+end
+                    end
+end)
+task.wait(.1)
+end
+while SlapAura and SlapAuraFriend == "Not Fight" do
+pcall(function()
+for i,v in next, game.Players:GetChildren() do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") and not game.Players.LocalPlayer:IsFriendsWith(v.UserId) then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude then
 gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild(SlapAuraCharacter),true)
+                    end
 end
+
 end
+                end
+end)
+pcall(function()
+for _, c in pairs(workspace:GetChildren()) do
+if string.find(c.Name, "Å") and c:FindFirstChild("HumanoidRootPart") then
+Magnitude1 = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - c.HumanoidRootPart.Position).Magnitude
+                        if _G.ReachSlapArua >= Magnitude1 then
+gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(c:WaitForChild(SlapAuraCharacter),true)
+                    end
 end
+                    end
+end)
+task.wait(.1)
 end
-end
-end
-end
-})
-Tab7:AddSlider({
-	Name = "Reach Shukuchi",
-	Min = 1,
-	Max = 130,
-	Default = 50,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "Reach",
-	Callback = function(Value)
-		_G.ReachShukuchi = Value
-	end    
+	end  
 })
 
 Tab7:AddDropdown({
