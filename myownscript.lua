@@ -2093,8 +2093,9 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Recall"].ClickDetector)
 
-game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Recall" and game.Players.LocalPlayer.Character:FindFirstChild("Recall") and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players[PlayerKick].Character:FindFirstChild("entered") and game.Players[PlayerKick].Character:FindFirstChild("HumanoidRootPart") then
+if game.Players[PlayerKick].Character:FindFirstChild("entered") and game.Players[PlayerKick].Character:FindFirstChild("HumanoidRootPart") then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby["Recall"].ClickDetector)
 OGL = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 v.CanTouch = false
@@ -2110,7 +2111,7 @@ for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
 v.CanTouch = true
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Recall equipped, or you have Backpack Recall equipped, or player not enter arena",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "The opp aint enter arena yet hollup",Image = "rbxassetid://7733658504",Time = 5})
 end
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
