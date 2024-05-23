@@ -1902,7 +1902,7 @@ end
   	end    
 })
 Tab1:AddButton({
-	Name = "⛰ Golem",
+	Name = "⛰ Golem(reveals name)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
@@ -1916,6 +1916,22 @@ game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
+Tab1:AddToggle({
+	Name = "Spam Parry",
+	Default = false,
+	Callback = function(Value)
+	AutoParry = Value
+while AutoParry == true do
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+
+fireclickdetector(game.Workspace.Lobby["Parry"].ClickDetector)
+game.ReplicatedStorage.GeneralAbility:FireServer()
+
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(1.6)
 end
   	end    
 })
