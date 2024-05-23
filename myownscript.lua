@@ -1761,8 +1761,8 @@ Tab2:AddToggle({
 	Default = false,
 	Callback = function(Value)
 	AutoGodmode = Value
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 while AutoGodmode do
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 
 fireclickdetector(game.Workspace.Lobby["Guardian Angel"].ClickDetector)
@@ -1770,13 +1770,13 @@ game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 wait(5)
-end
 else
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Guardian Angel" then
 game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
 wait(5)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
 end
 end
   	end    
@@ -2819,6 +2819,16 @@ local args = {
 game:GetService("ReplicatedStorage").RojoAbility:FireServer(unpack(args))
 task.wait()
 	end    
+})
+Tab1:AddButton({
+	Name = "Reset",
+	Callback = function()
+if game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "you're already dead fool",Image = "rbxassetid://7733658504",Time = 5})
+end
+  	end    
 })
 --keep this at the end
 end
