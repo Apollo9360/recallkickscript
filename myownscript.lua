@@ -1758,7 +1758,7 @@ end
 })
 Tab2:AddToggle({
 	Name = "👼🤖AUTO Guardian Angel Player",
-	Default = false
+	Default = false,
 	Callback = function(Value)
 	AutoGodmode = Value
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
@@ -1770,13 +1770,13 @@ game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
 
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 wait(5)
+end
 else
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Guardian Angel"
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Guardian Angel" then
 game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
 wait(5)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
-end
 end
 end
   	end    
