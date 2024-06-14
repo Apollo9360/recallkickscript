@@ -1984,17 +1984,14 @@ end
   	end    
 })
 Tab8:AddButton({
-	Name = "Boost Speed",
+	Name = "Boost Speed(Visual)",
 	Callback = function()
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-fireclickdetector(game.Workspace.Lobby["UFO"].ClickDetector)
 local args = {
     [1] = "boost"
 }
 
 game:GetService("ReplicatedStorage").Events.UFO:FireServer(unpack(args))
-fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
 end
@@ -2025,24 +2022,11 @@ OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
 fireclickdetector(game.Workspace.Lobby["UFO"].ClickDetector)
 wait(0)
 game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
-fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
-else
-OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
-end
-  	end    
-})
-Tab8:AddButton({
-	Name = "Boost Speed Solara",
-	Callback = function()
-if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
-OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
-fireclickdetector(game.Workspace.Lobby["UFO"].ClickDetector)
 wait(0)
-local args = {
-    [1] = "boost"
-}
-
-game:GetService("ReplicatedStorage").Events.UFO:FireServer(unpack(args))
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+wait(1.5)
+fireclickdetector(game.Workspace.Lobby["UFO"].ClickDetector)
+wait(0.5)
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
 OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
