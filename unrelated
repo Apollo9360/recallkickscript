@@ -1,29 +1,280 @@
----Visual Aura---
-
-if workspace:FindFirstChild("Safespot") == nil then
-local Safespot = Instance.new("Sphere",workspace)
-Safespot.Name = "Safespot"
-Safespot.Position = Vector3.new(10000,-50,10000)
-Safespot.Size = Vector3.new(500,10,500)
-Safespot.Anchored = true
-Safespot.CanCollide = true
-Safespot.Transparency = .5
-
-local Safespot1 = Instance.new("Part",workspace)
-Safespot1.Name = "DefendPart"
-Safespot1.Position = Vector3.new(10000.2, 13, 9752.45)
-Safespot1.Size = Vector3.new(500, 117, 5)
-Safespot1.Anchored = true
-Safespot1.CanCollide = true
-Safespot1.Transparency = .5
-Safespot1.Parent = game.workspace.Safespot
-
-
-
-while wait() do
-for i, v in pairs(game:GetService("Workspace").Money:GetChildren()) do
-firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
-print(v)
-wait(0.5)
+if not game:IsLoaded() then
+    game.Loaded:Wait()
 end
+
+game:GetService("GuiService"):ClearError()
+
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+if game.PlaceId == 14339696091 then
+local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("Ultra Unfair".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "slap battles"})
+
+if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("VelocityHandler") == nil then
+local bv = Instance.new("BodyVelocity")
+bv.Name = "VelocityHandler"
+bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bv.MaxForce = Vector3.new(0,0,0)
+bv.Velocity = Vector3.new(0,0,0)
+end
+
+if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("GyroHandler") == nil then
+local bg = Instance.new("BodyGyro")
+bg.Name = "GyroHandler"
+bg.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bg.MaxTorque = Vector3.new(0,0,0)
+bg.P = 1000
+bg.D = 50
+end
+
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(NewChar)
+local bv = Instance.new("BodyVelocity")
+bv.Name = "VelocityHandler"
+bv.Parent = NewChar:WaitForChild("Humanoid").RootPart
+bv.MaxForce = Vector3.new(0,0,0)
+bv.Velocity = Vector3.new(0,0,0)
+
+local bg = Instance.new("BodyGyro")
+bg.Name = "GyroHandler"
+bg.Parent = NewChar:WaitForChild("Humanoid").RootPart
+bg.MaxTorque = Vector3.new(0,0,0)
+bg.P = 1000
+bg.D = 50
+end)
+
+--Tab1 - 15
+local Tab = Window:MakeTab({
+	Name = "Info",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "Script",
+	Icon = "rbxassetid://8997387937",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "hi",
+	Icon = "rbxassetid://7734056608",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "hi",
+	Icon = "rbxassetid://7733673987",
+	PremiumOnly = false
+})
+
+Tab:AddLabel("hi")
+Tab:AddLabel("Droopy Snoopy")
+local InfoServer = Tab:AddSection({Name = "Info"})
+CanYouFps = Tab:AddLabel("Your Fps [ "..math.floor(workspace:GetRealPhysicsFPS()).." ]")
+CanYouPing = Tab:AddLabel("Your Ping [ "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString().." ]")
+ServerPlayer = Tab:AddLabel("Player In Server [ "..#game.Players:GetPlayers().." / "..game.Players.MaxPlayers.." ]")
+TimeServer = Tab:AddLabel("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 / 60).." Hour | "..math.floor(workspace.DistributedGameTime / 60) - (math.floor(workspace.DistributedGameTime / 60 / 60) * 60).." Minute | "..math.floor(workspace.DistributedGameTime) - (math.floor(workspace.DistributedGameTime / 60) * 60).." Second ]")
+TimeNow = Tab:AddLabel("Now Time [ "..os.date("%X").." ]")
+AgeAccYou = Tab:AddLabel("You Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+ResetTime = Tab:AddLabel("Time Spawn [ "..game.Players.RespawnTime.." ]")
+else
+ResetTime = Tab:AddLabel("Time Spawn [ Not Dead ]")
+end
+Tab:AddParagraph("Game's ID [ "..game.PlaceId.." ]","Server ID [ "..game.JobId.." ]")
+local InfoServer = Tab:AddSection({Name = "Local Player"})
+if game.Players.LocalPlayer.Character:FindFirstChild("rock") then
+WalkspeedYou = Tab:AddLabel("Walk Speed [ Not Walk then rock ]")
+JumppowerYou = Tab:AddLabel("Jump Power [ Not Jump Power then rock ]")
+HealthYou = Tab:AddLabel("Health You [ Not Health then rock ]")
+HipHeightYou = Tab:AddLabel("Hip Height [ Not Hip then rock ]")
+else
+WalkspeedYou = Tab:AddLabel("Walk Speed [ "..game.Players.LocalPlayer.Character.Humanoid.WalkSpeed.." ]")
+JumppowerYou = Tab:AddLabel("Jump Power [ "..game.Players.LocalPlayer.Character.Humanoid.JumpPower.." ]")
+HealthYou = Tab:AddLabel("Health You [ "..game.Players.LocalPlayer.Character.Humanoid.Health.." ]")
+HipHeightYou = Tab:AddLabel("Hip Height [ "..game.Players.LocalPlayer.Character.Humanoid.HipHeight.." ]")
+end
+GravityYou = Tab:AddLabel("Gravity [ "..game.Workspace.Gravity.." ]")
+PositionYou = Tab:AddLabel("Position In Your [ "..tostring(math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X)..", ".. math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y)..", "..math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)).." ]")
+
+Tab:AddToggle({
+	Name = "Auto Set Info",
+	Default = true,
+	Callback = function(Value)
+_G.AutoSetInfo = Value
+game:GetService("RunService").RenderStepped:Connect(function()
+if _G.AutoSetInfo then
+CanYouFps:Set("Your Fps [ "..math.floor(workspace:GetRealPhysicsFPS()).." ]")
+ServerPlayer:Set("Player In Server [ "..#game.Players:GetPlayers().." / "..game.Players.MaxPlayers.." ]")
+TimeServer:Set("Server Time [ "..math.floor(workspace.DistributedGameTime / 60 / 60).." Hour | "..math.floor(workspace.DistributedGameTime / 60) - (math.floor(workspace.DistributedGameTime / 60 / 60) * 60).." Minutes | "..math.floor(workspace.DistributedGameTime) - (math.floor(workspace.DistributedGameTime / 60) * 60).." Second ]")
+CanYouPing:Set("Your Ping [ "..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString().." ]")
+AgeAccYou:Set("Your Account Age [ "..game.Players.LocalPlayer.AccountAge.." ]")
+TimeNow:Set("Now Time [ "..os.date("%X").." ]")
+if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+ResetTime:Set("Time Spawn [ "..game.Players.RespawnTime.." ]")
+else
+ResetTime:Set("Time Spawn [ Not Dead ]")
+end
+PositionYou:Set("Position In You [ "..tostring(math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X)..", ".. math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y)..", "..math.round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)).." ]")
+if game.Players.LocalPlayer.Character:FindFirstChild("rock") then
+WalkspeedYou:Set("Walk Speed [ Not Walk then rock ]")
+JumppowerYou:Set("Jump Power [ Not Jump Power then rock ]")
+HealthYou:Set("Health You [ Not Health then rock ]")
+HipHeightYou:Set("Hip Height [ Not Hip then rock ]")
+else
+WalkspeedYou:Set("Walk Speed [ "..game.Players.LocalPlayer.Character.Humanoid.WalkSpeed.." ]")
+JumppowerYou:Set("Jump Power [ "..game.Players.LocalPlayer.Character.Humanoid.JumpPower.." ]")
+HealthYou:Set("Health You [ "..game.Players.LocalPlayer.Character.Humanoid.Health.." ]")
+HipHeightYou:Set("Hip Height [ "..game.Players.LocalPlayer.Character.Humanoid.HipHeight.." ]")
+end
+GravityYou:Set("Gravity [ "..game.Workspace.Gravity.." ]")
+end
+end)
+end    
+})
+
+Tab1:AddToggle({
+	Name = "Flame Aura",
+	Default = false,
+	Callback = function(Value)
+FlameAura = Value
+while FlameAura do
+--local args = {
+--    [1] = "Flame Charade",
+--    [2] = workspace.Cripple.Humanoid,
+--    [3] = 0,
+--    [4] = {
+--        ["Charge"] = 1
+--    }
+--}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Cripple.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Crail.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Blyke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Isen.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Remi.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Zeke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Seraphina.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Arlo.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.John.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Seer.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Thunderclap.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Roku.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Cultist.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Otherworlders.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.God.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+wait(0.1)
+end
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "WalkSpeed",
+	Min = 20,
+	Max = 100,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WalkSpeed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+Walkspeed = Value
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Walkspeed Set Auto",
+	Default = false,
+	Callback = function(Value)
+		KeepWalkspeed = Value
+            while KeepWalkspeed do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= Walkspeed then
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                end
+task.wait()
+            end
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "JumpPower",
+	Min = 50,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "JumpPower",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+Jumppower = Value
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Jumppower Set Auto",
+	Default = false,
+	Callback = function(Value)
+		KeepJumppower = Value
+            while KeepJumppower do
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.JumpPower ~= Jumppower then
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+                end
+task.wait()
+            end
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "Hip Height",
+	Min = 0,
+	Max = 100,
+	Default = 2,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Hip Height",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = Value
+HipHeight = Value
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Hip Height Set Auto",
+	Default = false,
+	Callback = function(Value)
+		KeepHipHeight = Value
+           while KeepHipHeight do
+              if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Players.LocalPlayer.Character.Humanoid.HipHeight ~= HipHeight then
+                  game.Players.LocalPlayer.Character.Humanoid.HipHeight  = HipHeight
+              end
+task.wait()
+         end
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "Gravity",
+	Min = 0,
+	Max = 600,
+	Default = 196,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Gravity",
+	Callback = function(Value)
+game.Workspace.Gravity = Value
+Gravity = Value
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Gravity Set Auto",
+	Default = false,
+	Callback = function(Value)
+		KeepGravity = Value
+           while KeepGravity do
+              if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil and game.Workspace.Gravity ~= nil and game.Workspace.Gravity ~= Gravity then
+                  game.Workspace.Gravity = Gravity
+              end
+task.wait()
+         end
+	end    
+})
 end
