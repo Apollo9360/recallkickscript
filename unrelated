@@ -138,29 +138,36 @@ Tab1:AddToggle({
 	Callback = function(Value)
 FlameAura = Value
 while FlameAura do
---local args = {
---    [1] = "Flame Charade",
---    [2] = workspace.Cripple.Humanoid,
---    [3] = 0,
---    [4] = {
---        ["Charge"] = 1
---    }
---}
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Cripple.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Crail.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Blyke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Isen.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Remi.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Zeke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Seraphina.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Arlo.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.John.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Seer.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Thunderclap.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Roku.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Cultist.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.Otherworlders.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack([1] = "Flame Charade", [2] = workspace.God.Humanoid, [3] = 0, [4] = {["Charge"] = 1}))
+local args = {[1] = "Flame Charade", [2] = workspace.Cripple.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))--Thunderclap, Roku, Cultist, Otherworlders, God
+local args = {[1] = "Flame Charade", [2] = workspace.Crail.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Blyke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Isen.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Remi.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Zeke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Seraphina.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Arlo.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.John.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Seer.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Thunderclap.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Roku.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Cultist.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.Otherworlders.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+local args = {[1] = "Flame Charade", [2] = workspace.God.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
 wait(0.1)
 end
 	end    
