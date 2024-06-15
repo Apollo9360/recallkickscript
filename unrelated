@@ -132,6 +132,7 @@ end)
 end    
 })
 
+
 Tab1:AddToggle({
 	Name = "Flame Aura",
 	Default = false,
@@ -173,6 +174,22 @@ end
 	end    
 })
 
+Tab1:AddToggle({
+	Name = "Arbiter Aura",
+	Default = false,
+	Callback = function(Value)
+ArbAura = Value
+while ArbAura do
+local args = {
+    [1] = "Dark Blade",
+    [2] = workspace.Cripple.Humanoid,
+}
+
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
+wait(0.1)
+end
+	end    
+})
 Tab2:AddSlider({
 	Name = "WalkSpeed",
 	Min = 20,
