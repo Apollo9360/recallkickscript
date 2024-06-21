@@ -301,4 +301,50 @@ task.wait()
          end
 	end    
 })
+Tab3:AddButton({
+	Name = "+1 Fist",
+	Callback = function()
+local args = {
+    [1] = "Fist"
+}
+Rep.RollGear:InvokeServer(unpack(args))
+  	end    
+})
+Tab3:AddButton({
+	Name = "+1 Style",
+	Callback = function()
+local args = {
+    [1] = "Relic"
+}
+Rep.RollGear:InvokeServer(unpack(args))
+  	end    
+})
+Tab3:AddToggle({
+	Name = "Luck",
+	Default = false,
+	Callback = function(Value)
+		luckboosterthing = Value
+            while luckboosterthing do
+                local args = {
+                    [1] = "Self Gamble",
+                    [2] = {
+                        ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
+                        ["Boost"] = "Ultra Lucky"
+                    }
+                }
+                Rep.Remotes.SkillCast:FireServer(unpack(args))
+		                local args = {
+                    [1] = "Group Gamble",
+                    [2] = {
+                        ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
+                        ["Boost"] = "Super Lucky",
+                        ["HitPlayers"] = {
+                            [1] = Player
+                        }
+                    }
+                }
+	task.wait(1)
+            end
+	end    
+})
 end
