@@ -41,7 +41,6 @@ bg.P = 1000
 bg.D = 50
 end)
 
---Tab1 - 15
 local Tab = Window:MakeTab({
 	Name = "Info",
 	Icon = "rbxassetid://7734053426",
@@ -140,7 +139,7 @@ Tab1:AddToggle({
 FlameAura = Value
 while FlameAura do
 local args = {[1] = "Flame Charade", [2] = workspace.Cripple.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
-game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))--Thunderclap, Roku, Cultist, Otherworlders, God
+game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
 local args = {[1] = "Flame Charade", [2] = workspace.Crail.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
 game:GetService("ReplicatedStorage").Damage:FireServer(unpack(args))
 local args = {[1] = "Flame Charade", [2] = workspace.Blyke.Humanoid, [3] = 0, [4] = {["Charge"] = 1}}
