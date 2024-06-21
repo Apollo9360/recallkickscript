@@ -373,4 +373,39 @@ Tab3:AddButton({
 massUpgrade("Style", true, 10)
   	end    
 })
+local function massUpgrade(type, ignoreUpgraded, threshold)
+    spawn(function()
+        local validMaterials = {}
+
+        local data = {}
+        if type == "Fist" then
+            data = getUserData().Fists
+        else
+            data = getUserData().Relics
+        end
+
+        for id, fields in data do
+            if(ignoreUpgraded and fields.BaseLevel ~= fields.Level) then 
+                continue 
+            end
+            if fields.Level <= threshold then
+                table.insert(validMaterials, id)
+            end
+        end
+
+        while #validMaterials >= 4 do
+            local args = {
+                [1] = type,
+                [2] = {
+                    [1] = table.remove(validMaterials),
+                    [2] = table.remove(validMaterials),
+                    [3] = table.remove(validMaterials),
+                    [4] = table.remove(validMaterials),
+                }
+            }
+            Rep.UpgradeItem:InvokeServer(unpack(args))
+        end
+    end)
+end
+
 end
