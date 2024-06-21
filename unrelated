@@ -318,6 +318,7 @@ local args = {
 Get.ReplicatedStorage.RollGear:InvokeServer(unpack(args))
   	end    
 })
+local Rep = Get.ReplicatedStorage
 Tab3:AddToggle({
 	Name = "Luck",
 	Default = false,
@@ -332,7 +333,7 @@ Tab3:AddToggle({
                     }
                 }
                 Rep.Remotes.SkillCast:FireServer(unpack(args))
-		                local args = {
+		local args = {
                     [1] = "Group Gamble",
                     [2] = {
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
@@ -342,6 +343,7 @@ Tab3:AddToggle({
                         }
                     }
                 }
+		Rep.Remotes.SkillCast:FireServer(unpack(args))
 	task.wait(1)
             end
 	end    
