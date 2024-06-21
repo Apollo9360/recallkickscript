@@ -332,19 +332,17 @@ Tab3:AddToggle({
                         ["Boost"] = "Ultra Lucky"
                     }
                 }
-                Rep.Remotes.SkillCast:FireServer(unpack(args))
-		local args = {
+                game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
+		        local args = {
                     [1] = "Group Gamble",
                     [2] = {
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
                         ["Boost"] = "Super Lucky",
-                        ["HitPlayers"] = {
-                            [1] = Player
-                        }
+                        ["HitPlayers"] = playerList
                     }
                 }
-		Rep.Remotes.SkillCast:FireServer(unpack(args))
-	task.wait(1)
+                game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
+		task.wait(1)
             end
 	end    
 })
