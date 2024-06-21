@@ -318,7 +318,6 @@ local args = {
 game:GetService("ReplicatedStorage").RollGear:InvokeServer(unpack(args))
   	end    
 })
-local Rep = Get.ReplicatedStorage
 Tab3:AddToggle({
 	Name = "Luck",
 	Default = false,
