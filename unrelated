@@ -306,7 +306,7 @@ Tab3:AddButton({
 local args = {
     [1] = "Fist"
 }
-Rep.RollGear:InvokeServer(unpack(args))
+Get.ReplicatedStorage.RollGear:InvokeServer(unpack(args))
   	end    
 })
 Tab3:AddButton({
@@ -315,7 +315,7 @@ Tab3:AddButton({
 local args = {
     [1] = "Relic"
 }
-Rep.RollGear:InvokeServer(unpack(args))
+Get.ReplicatedStorage.RollGear:InvokeServer(unpack(args))
   	end    
 })
 Tab3:AddToggle({
