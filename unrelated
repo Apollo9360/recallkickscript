@@ -403,7 +403,7 @@ local function massUpgrade(type, ignoreUpgraded, threshold)
                     [4] = table.remove(validMaterials),
                 }
             }
-            Rep.UpgradeItem:InvokeServer(unpack(args))
+            game:GetService("ReplicatedStorage").Remotes.UpgradeItem:InvokeServer(unpack(args))
         end
     end)
 end
