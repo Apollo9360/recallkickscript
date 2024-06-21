@@ -300,22 +300,38 @@ task.wait()
          end
 	end    
 })
+Tab2:AddSlider({
+	Name = "Amount",
+	Min = 1,
+	Max = 100,
+	Default = 196,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "stuffzzz",
+	Callback = function(Value)
+stuffzzz = Value
+end    
+})
 Tab3:AddButton({
-	Name = "+1 Fist",
+	Name = "Get Fist",
 	Callback = function()
+for i = 1, stuffzzz do
 local args = {
     [1] = "Fist"
 }
 game:GetService("ReplicatedStorage").RollGear:InvokeServer(unpack(args))
+end
   	end    
 })
 Tab3:AddButton({
-	Name = "+1 Style",
+	Name = "Get Style",
 	Callback = function()
+for i = 1, stuffzzz do
 local args = {
     [1] = "Relic"
 }
 game:GetService("ReplicatedStorage").RollGear:InvokeServer(unpack(args))
+end
   	end    
 })
 Tab3:AddToggle({
@@ -344,5 +360,17 @@ Tab3:AddToggle({
 		task.wait(1)
             end
 	end    
+})
+Tab3:AddButton({
+	Name = "Mass Ugr Fist",
+	Callback = function()
+massUpgrade("Fist", true, 10)
+  	end    
+})
+Tab3:AddButton({
+	Name = "Mass Ugr Style",
+	Callback = function()
+massUpgrade("Style", true, 10)
+  	end    
 })
 end
