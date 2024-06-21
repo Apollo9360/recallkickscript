@@ -300,7 +300,7 @@ task.wait()
          end
 	end    
 })
-Tab2:AddSlider({
+Tab3:AddSlider({
 	Name = "Amount",
 	Min = 1,
 	Max = 100,
