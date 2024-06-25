@@ -398,7 +398,7 @@ end
 })
 Tab3:AddTextbox({
 	Name = "playertoluck1",
-	Default = "",
+	Default = "goofydefaultname",
 	TextDisappear = false,
 	Callback = function(Value)
 goofygoobertest1 = Value
