@@ -410,6 +410,7 @@ end
 end
 if targetPlayer1 then
 name1 = targetPlayer1.Name
+print(name1)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name1.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -431,6 +432,7 @@ end
 end
 if targetPlayer2 then
 name2 = targetPlayer2.Name
+print(name2)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name2.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -452,6 +454,7 @@ end
 end
 if targetPlayer3 then
 name3 = targetPlayer3.Name
+print(name3)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name3.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -473,6 +476,7 @@ end
 end
 if targetPlayer4 then
 name4 = targetPlayer4.Name
+print(name4)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name4.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -494,6 +498,7 @@ end
 end
 if targetPlayer5 then
 name5 = targetPlayer5.Name
+print(name5)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name5.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -515,6 +520,7 @@ end
 end
 if targetPlayer6 then
 name6 = targetPlayer6.Name
+print(name6)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name6.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -536,6 +542,7 @@ end
 end
 if targetPlayer7 then
 name7 = targetPlayer7.Name
+print(name7)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name7.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -557,6 +564,7 @@ end
 end
 if targetPlayer8 then
 name8 = targetPlayer8.Name
+print(name8)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name8.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -578,6 +586,7 @@ end
 end
 if targetPlayer9 then
 name9 = targetPlayer9.Name
+print(name9)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name9.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -599,6 +608,7 @@ end
 end
 if targetPlayer10 then
 name10 = targetPlayer10.Name
+print(name10)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name10.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -620,6 +630,7 @@ end
 end
 if targetPlayer11 then
 name11 = targetPlayer11.Name
+print(name11)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name11.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -641,6 +652,7 @@ end
 end
 if targetPlayer12 then
 name12 = targetPlayer12.Name
+print(name12)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name12.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -662,6 +674,7 @@ end
 end
 if targetPlayer13 then
 name13 = targetPlayer13.Name
+print(name13)
 OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name13.." ]",Image = "rbxassetid://7733658504",Time = 5})
 else
 OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
@@ -688,19 +701,19 @@ Tab3:AddToggle({
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
                         ["Boost"] = "Super Lucky",
                         ["HitPlayers"] = {
-                            [1] = name1.Name,
-			    [2] = name2.Name,
-                            [3] = name3.Name,
-			    [4] = name4.Name,
-                            [5] = name5.Name,
-			    [6] = name6.Name,
-                            [7] = name7.Name,
-			    [8] = name8.Name,
-                            [9] = name9.Name,
-			    [10] = name10.Name,
-                            [11] = name11.Name,
-			    [12] = name12.Name,
-			    [13] = name13.Name
+                            [1] = name1,
+			    [2] = name2,
+                            [3] = name3,
+			    [4] = name4,
+                            [5] = name5,
+			    [6] = name6,
+                            [7] = name7,
+			    [8] = name8,
+                            [9] = name9,
+			    [10] = name10,
+                            [11] = name11,
+			    [12] = name12,
+			    [13] = name13
                         }
 			}
                 }
