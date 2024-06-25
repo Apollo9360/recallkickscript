@@ -66,7 +66,7 @@ local Tab3 = Window:MakeTab({
 })
 
 Tab:AddLabel("hi")
-Tab3:AddLabel(v_name1)
+Tab3:AddLabel(goofygoobertest1)
 Tab:AddLabel("Droopy Snoopy")
 local InfoServer = Tab:AddSection({Name = "Info"})
 CanYouFps = Tab:AddLabel("Your Fps [ "..math.floor(workspace:GetRealPhysicsFPS()).." ]")
@@ -401,9 +401,8 @@ Tab3:AddTextbox({
 	Default = "",
 	TextDisappear = false,
 	Callback = function(Value)
-v_name1 = Value
-print(v_name1)
-OrionLib:MakeNotification({Name = "Complete",Content = "Using Player [ "..v_name1.." ]",Image = "rbxassetid://7733658504",Time = 5})
+goofygoobertest1 = Value
+print(goofygoobertest1)
 	end	  
 })
 Tab3:AddToggle({
@@ -412,7 +411,7 @@ Tab3:AddToggle({
 	Callback = function(Value)
 		luckboosterthing = Value
             while luckboosterthing do
-print(v_name1)
+print(goofygoobertest1)
                 local args = {
                     [1] = "Self Gamble",
                     [2] = {
@@ -427,12 +426,12 @@ print(v_name1)
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
                         ["Boost"] = "Super Lucky",
                         ["HitPlayers"] = {
-                            [1] = v_name1
+                            [1] = goofygoobertest1
                         }
 			}
                 }
                 game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
-print(v_name1)
+print(goofygoobertest1)
 		task.wait(1)
             end
 	end    
