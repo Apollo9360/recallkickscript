@@ -395,6 +395,279 @@ game:GetService("ReplicatedStorage").RollGear:InvokeServer(unpack(args))
 end
   	end    
 })
+Tab3:AddTextbox({
+	Name = "playertoluck1",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name1abv = Value
+local targetPlayer1
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer1 = v
+break
+end
+end
+if targetPlayer1 then
+name1 = targetPlayer1.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name1.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck2",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name2abv = Value
+local targetPlayer2
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer2 = v
+break
+end
+end
+if targetPlayer2 then
+name2 = targetPlayer2.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name2.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck3",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name3abv = Value
+local targetPlayer3
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer3 = v
+break
+end
+end
+if targetPlayer3 then
+name3 = targetPlayer3.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name3.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck4",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name4abv = Value
+local targetPlayer4
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer4 = v
+break
+end
+end
+if targetPlayer4 then
+name4 = targetPlayer4.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name4.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck5",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name5abv = Value
+local targetPlayer5
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer5 = v
+break
+end
+end
+if targetPlayer5 then
+name5 = targetPlayer5.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name5.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck6",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name6abv = Value
+local targetPlayer6
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer6 = v
+break
+end
+end
+if targetPlayer6 then
+name6 = targetPlayer6.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name6.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck7",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name7abv = Value
+local targetPlayer7
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer7 = v
+break
+end
+end
+if targetPlayer7 then
+name7 = targetPlayer7.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name7.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck8",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name8abv = Value
+local targetPlayer8
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer8 = v
+break
+end
+end
+if targetPlayer8 then
+name8 = targetPlayer8.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name8.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck9",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name9abv = Value
+local targetPlayer9
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer9 = v
+break
+end
+end
+if targetPlayer9 then
+name9 = targetPlayer9.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name9.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck10",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name10abv = Value
+local targetPlayer10
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer10 = v
+break
+end
+end
+if targetPlayer10 then
+name10 = targetPlayer10.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name10.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck11",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name11abv = Value
+local targetPlayer11
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer11 = v
+break
+end
+end
+if targetPlayer11 then
+name11 = targetPlayer11.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name11.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck12",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name12abv = Value
+local targetPlayer12
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer12 = v
+break
+end
+end
+if targetPlayer12 then
+name12 = targetPlayer12.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name12.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "playertoluck13",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+local name13abv = Value
+local targetPlayer13
+for _, v in pairs(game.Players:GetPlayers()) do
+if string.sub(v.Name, 1, #targetAbbreviation):lower() == targetAbbreviation:lower() then
+targetPlayer13 = v
+break
+end
+end
+if targetPlayer13 then
+name13 = targetPlayer13.Name
+OrionLib:MakeNotification({Name = "Error",Content = "Found Player [ "..name13.." ]",Image = "rbxassetid://7733658504",Time = 5})
+else
+OrionLib:MakeNotification({Name = "Error",Content = "Can't find player",Image = "rbxassetid://7733658504",Time = 5})
+end
+	end	  
+})
 Tab3:AddToggle({
 	Name = "Luck",
 	Default = false,
@@ -408,21 +681,31 @@ Tab3:AddToggle({
                         ["Boost"] = "Ultra Lucky"
                     }
                 }
-    function()
-        local playerList = {}
-        for _, player in Players:GetChildren() do
-            table.insert(playerList, player)
-        end
                 game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
 		        local args = {
                     [1] = "Group Gamble",
                     [2] = {
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
                         ["Boost"] = "Super Lucky",
-                        ["HitPlayers"] = playerList
-                    }
+                        ["HitPlayers"] = {
+                            [1] = name1.Name,
+			    [2] = name2.Name,
+                            [3] = name3.Name,
+			    [4] = name4.Name,
+                            [5] = name5.Name,
+			    [6] = name6.Name,
+                            [7] = name7.Name,
+			    [8] = name8.Name,
+                            [9] = name9.Name,
+			    [10] = name10.Name,
+                            [11] = name11.Name,
+			    [12] = name12.Name,
+			    [13] = name13.Name
+                        }
+			}
                 }
                 game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
+print(args)
 		task.wait(1)
             end
 	end    
