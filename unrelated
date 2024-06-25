@@ -408,6 +408,11 @@ Tab3:AddToggle({
                         ["Boost"] = "Ultra Lucky"
                     }
                 }
+    function()
+        local playerList = {}
+        for _, player in Players:GetChildren() do
+            table.insert(playerList, player)
+        end
                 game:GetService("ReplicatedStorage").Remotes.SkillCast:FireServer(unpack(args))
 		        local args = {
                     [1] = "Group Gamble",
