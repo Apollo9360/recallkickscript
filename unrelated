@@ -300,6 +300,66 @@ task.wait()
          end
 	end    
 })
+Tab2:AddToggle({
+	Name = "Healing",
+	Default = false,
+	Callback = function(Value)
+		HealOn = Value
+while HealOn do
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character
+}
+
+game:GetService("ReplicatedStorage").SkillRemotes.Heal:FireServer(unpack(args))
+wait(0.1)
+end
+end
+})
+Tab2:AddButton({
+	Name = "Power Up",
+	Callback = function()
+local args = {
+    [1] = true
+}
+game:GetService("ReplicatedStorage").ToggleAbility:InvokeServer(unpack(args))
+  	end    
+})
+Tab2:AddButton({
+	Name = "phase shift",
+	Callback = function()
+local args = {
+    [1] = "Shift Phase",
+    [2] = 1719279860,
+    [3] = Vector3.new(1, 1, 1),
+    [4] = 22
+}
+
+game:GetService("ReplicatedStorage").Charge:FireServer(unpack(args))
+local args = {
+    [1] = "Shift Phase",
+    [2] = {
+        ["Mousepos"] = Vector3.new(1, 1, 1),
+        ["Charge"] = 0
+    },
+    [3] = 0
+}
+
+game:GetService("ReplicatedStorage").Cast:FireServer(unpack(args))
+
+  	end    
+})
+Tab2:AddButton({
+	Name = "swap test",
+	Callback = function()
+local args = {
+    [1] = "929347417"
+}
+
+game:GetService("ReplicatedStorage").SwapAbility:FireServer(unpack(args))
+  	end    
+})
+
+
 Tab3:AddSlider({
 	Name = "Amount",
 	Min = 1,
@@ -312,6 +372,7 @@ Tab3:AddSlider({
 stuffzzz = Value
 end    
 })
+
 Tab3:AddButton({
 	Name = "Get Fist",
 	Callback = function()
