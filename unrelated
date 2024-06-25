@@ -405,6 +405,7 @@ print(v_name1)
 OrionLib:MakeNotification({Name = "Complete",Content = "Using Player [ "..v_name1.." ]",Image = "rbxassetid://7733658504",Time = 5})
 	end	  
 })
+name1 = Tab:AddLabel("Player 1 [ "..v_name1.." ]")
 Tab3:AddToggle({
 	Name = "Luck",
 	Default = false,
