@@ -2064,7 +2064,26 @@ OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Imag
 end
   	end    
 })
-
+Tab1:AddButton({
+	Name = "💫Siphon",
+	Callback = function()
+if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+OGlove = game.Players.LocalPlayer.leaderstats.Glove.Value
+fireclickdetector(game.Workspace.Lobby["Siphon"].ClickDetector)
+local args = {
+    [1] = {
+        ["startcf"] = CFrame.new(-256.4813537597656, -5.2781758308410645, 3.59968900680542) * CFrame.Angles(7.893251563473314e-07, 1.5095040798187256, -7.902189622654987e-07),
+        ["charge"] = 1.1000000052154064,
+        ["cf"] = CFrame.new(-269.69512939453125, -8.27817440032959, 1.7868895530700684) * CFrame.Angles(7.893251563473314e-07, 1.5095040798187256, -7.902189622654987e-07)
+    }
+}
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer(unpack(args))
+fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
+else
+OrionLib:MakeNotification({Name = "Error",Content = "u gotta have no glove",Image = "rbxassetid://7733658504",Time = 1})
+end
+  	end    
+})
 Tab4:AddButton({
 	Name = "Get Glove Firework(WALK INTO AN OVEN AFTER!)",
 	Callback = function()
