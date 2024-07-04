@@ -426,7 +426,7 @@ print(Players.LocalPlayer)
                         ["Color"] = Color3.new(1, 0.8509804010391235, 0.30980393290519714),
                         ["Boost"] = "Super Lucky",
                         ["HitPlayers"] = {
-                            [1] = Players.LocalPlayer
+                            [1] = "Players.LocalPlayer"
                         }
 			}
                 }
