@@ -1116,6 +1116,7 @@ local LuckMode = PageLuck.AddDropdown("Luck Mode", {
     "Super Lucky",
     "Ultra Lucky",
     "Insanely Lucky",
+    "Soeborg",
     }, 
     function(value)
         RollSettings.LuckMode = value
