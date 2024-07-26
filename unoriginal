@@ -19,21 +19,6 @@ local Tab1 = Window:MakeTab({
 	Icon = "rbxassetid://8997387937",
 	PremiumOnly = false
 })
-Tab1:AddSlider({
-	Name = "particle stuff",
-	Min = 100,
-	Max = 1000000,
-	Default = 20,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 100,
-	ValueName = "particle",
-	Callback = function(Value)
-while true do
-Game.Players.LocalPlayer["Particles"].Value = Value Game.Players.LocalPlayer["Particles"]["Max"].Value = Value
-wait(0.01)
-end
-	end    
-})
 Tab1:AddToggle({
 	Name = "Anti Particle CD",
 	Default = false,
@@ -45,5 +30,19 @@ wait(0.01)
 end
 	end    
 })
-
+Tab1:AddSlider({
+	Name = "particle stuff",
+	Min = 100,
+	Max = 1000000,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,100),
+	Increment = 100,
+	ValueName = "particle",
+	Callback = function(Value)
+while true do
+Game.Players.LocalPlayer["Particles"].Value = Value Game.Players.LocalPlayer["Particles"]["Max"].Value = Value
+wait(0.01)
+end
+	end    
+})
 end
