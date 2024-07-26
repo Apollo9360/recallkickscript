@@ -30,19 +30,26 @@ wait(0.01)
 end
 	end    
 })
+Tab1:AddToggle({
+	Name = "Choose Particle Amount",
+	Default = false,
+	Callback = function(Value)
+ChooseAmount = Value
+	end    
+})
 Tab1:AddSlider({
 	Name = "particle stuff",
 	Min = 100,
 	Max = 1000000,
-	Default = 20,
 	Color = Color3.fromRGB(255,255,100),
 	Increment = 100,
 	ValueName = "particle",
 	Callback = function(Value)
+    ParticleVal = Value
 	end    
 })
-while true do
-Game.Players.LocalPlayer["Particles"].Value = Value Game.Players.LocalPlayer["Particles"]["Max"].Value = Value
-wait(0.01)
+while ChooseAmount do
+Game.Players.LocalPlayer["Particles"].Value = ParticleVal Game.Players.LocalPlayer["Particles"]["Max"].Value = ParticleVal
+wait(0.1)
 end
 end
