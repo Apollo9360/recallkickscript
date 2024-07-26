@@ -25,12 +25,13 @@ Tab1:AddSlider({
 	Max = 1000000,
 	Default = 20,
 	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
+	Increment = 100,
 	ValueName = "particle",
 	Callback = function(Value)
---Game.Players.LocalPlayer["Stasis"].Value = 4 Game.Players.LocalPlayer["Time Manipulation"]["1"].Value = 0 Game.Players.LocalPlayer["Time Manipulation"]["3"].Value = 0
-
+while true
 Game.Players.LocalPlayer["Particles"].Value = Value Game.Players.LocalPlayer["Particles"]["Max"].Value = Value
+wait(0.01)
+end
 	end    
 })
 Tab1:AddToggle({
