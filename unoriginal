@@ -8,5 +8,15 @@ local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Gia
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 if game.PlaceId == 17675690783 then
 local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("UnOriginal".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "unoriginal"})
+local Tab = Window:MakeTab({
+	Name = "Info",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
 
+local Tab1 = Window:MakeTab({
+	Name = "Script",
+	Icon = "rbxassetid://8997387937",
+	PremiumOnly = false
+})
 end
