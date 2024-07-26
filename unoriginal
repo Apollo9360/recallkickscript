@@ -28,7 +28,7 @@ Tab1:AddSlider({
 	Increment = 100,
 	ValueName = "particle",
 	Callback = function(Value)
-while true
+while true do
 Game.Players.LocalPlayer["Particles"].Value = Value Game.Players.LocalPlayer["Particles"]["Max"].Value = Value
 wait(0.01)
 end
