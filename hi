@@ -989,7 +989,7 @@ local ToggleAutoRoll = PageRoll.AddToggle("Hide GUI when Auto", RollSettings.Hid
 end)
 
 
-local RollThreshold = PageRoll.AddSlider("Roll Minimum Level (Global)", {Min = 0, Max = 30, Def = RollSettings.Threshold, Decimal = 1}, function(value)
+local RollThreshold = PageRoll.AddSlider("Roll Minimum Level (Global)", {Min = 0, Max = 30.1, Def = RollSettings.Threshold, Decimal = 1}, function(value)
     RollSettings.Threshold = value
     Save("RollSettings", RollSettings)
 end)
