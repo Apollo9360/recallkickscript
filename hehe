@@ -1,0 +1,25 @@
+if game.PlaceId ~= 14339696091 and ~= 17198725641 then
+    return nil
+end
+local Players = Get.Players
+local Player = Players.LocalPlayer
+local Workspace = Get.Workspace
+local RunService = Get.RunService
+local Rep = Get.ReplicatedStorage
+local HttpService = Get.HttpService
+local TeleportService = Get.TeleportService
+local VirtualInputManager = Get.VirtualInputManager
+
+local groupId = 15508585
+local privilegeThreshold = 150
+
+for i, v in ipairs(Workspace:GetChildren()) do
+        if v:IsA("Model") and (not(table.find(MobList, v.Name)) or v.Name == "Barrier") and v.Name ~= Player.Name then
+            local Enemy = v:FindFirstChildWhichIsA("Humanoid")
+    local args = {
+        [1] = "Eradication",
+        [2] = Enemy--:FindFirstChildWhichIsA("Humanoid"),
+    }
+    Rep.Damage:FireServer(unpack(args))
+end
+end
