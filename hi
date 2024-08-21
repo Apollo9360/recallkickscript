@@ -12,21 +12,21 @@ getgenv().Toggles = {
     AutoRoll = false,
     FarmBoss = false,
     BreakBarrier = false,
-    Hidden = false
+    Hidden = true
 }
 
 getgenv().FarmSettings = {
-    AuraDistance = 6,
-    FarmDistance = 3,
+    AuraDistance = 49,
+    FarmDistance = 1,
     KillPlayers = true,
-    SelectedQuest = nil,
+    SelectedQuest = Ultra Fair,
     LeaveOnMod = true
 }
 
 getgenv().AuraSettings = {
     PunchSpeed = 0.15,
-    KillDistance = 12,
-    Mode = "Punch (Lowest 150ms)"
+    KillDistance = 49,
+    Mode = "Punch"
 }
 
 
@@ -40,8 +40,8 @@ getgenv().RollSettings = {
 }
 
 getgenv().UpgradeSettings = {
-    Threshold = 5,
-    IgnoreUpgraded = false
+    Threshold = 10,
+    IgnoreUpgraded = true
 }
 
 
@@ -372,7 +372,7 @@ local function BossFarm()
 
         while Boss and Boss.Humanoid.Health > 0 and Toggles.FarmBoss do
             if not Player.Character:FindFirstChild("Head"):FindFirstChild("LeftGlow") then
-                activateAbility()
+                --activateAbility()
             end
 
             local currentDistance = 0
@@ -432,7 +432,7 @@ local function main()
                 if Toggles.Farm then
                     pcall(function()
                         if not Player.Character:FindFirstChild("Head"):FindFirstChild("LeftGlow") then
-                            activateAbility()
+                            --activateAbility()
                         end
 
                         if not Player.PlayerGui.MainClient.Quest.visible then
@@ -898,7 +898,7 @@ local TpToggle = PageFarm.AddToggle("Hidden Farm", FarmSettings.Hidden, function
             Player.Character:MoveTo(
                 Vector3.new(
                     Player.Character.HumanoidRootPart.Position.x, 
-                    Player.Character.HumanoidRootPart.Position.y + FarmSettings.FarmDistance, 
+                    Player.Character.HumanoidRootPart.Position.y + 1-- + FarmSettings.FarmDistance, 
                     Player.Character.HumanoidRootPart.Position.z
                 )
             )
