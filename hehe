@@ -1,4 +1,48 @@
-if game.PlaceId ~= 14339696091 and ~= 17198725641 then
+if game.PlaceId ~= 14339696091 and game.PlaceId ~= 17198725641 then
+    return nil
+end
+print("hi")
+local Players = Get.Players
+local Player = Players.LocalPlayer
+local Workspace = Get.Workspace
+local RunService = Get.RunService
+local Rep = Get.ReplicatedStorage
+local HttpService = Get.HttpService
+local TeleportService = Get.TeleportService
+local VirtualInputManager = Get.VirtualInputManager
+
+local groupId = 15508585
+local privilegeThreshold = 150
+game:GetService("GuiService"):ClearError()
+
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+if game.PlaceId == 17675690783 then
+local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("UnOriginal".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "unoriginal"})
+local Tab = Window:MakeTab({
+	Name = "scrip",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
+Tab:AddToggle({
+	Name = "Anti Particle CD",
+	Default = false,
+	Callback = function(Value)
+while true do
+for i, v in ipairs(Workspace:GetChildren()) do
+        if v:IsA("Model") and (not(table.find(MobList, v.Name)) or v.Name == "Barrier") and v.Name ~= Player.Name then
+            local Enemy = v:FindFirstChildWhichIsA("Humanoid")
+    local args = {
+        [1] = "Eradication",
+        [2] = Enemy--:FindFirstChildWhichIsA("Humanoid"),
+    }
+    Rep.Damage:FireServer(unpack(args))
+
+end
+end
+	end   
+end
+})if game.PlaceId ~= 14339696091 and game.PlaceId ~= 17198725641 then
     return nil
 end
 local Players = Get.Players
@@ -12,14 +56,38 @@ local VirtualInputManager = Get.VirtualInputManager
 
 local groupId = 15508585
 local privilegeThreshold = 150
+game:GetService("GuiService"):ClearError()
 
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+if game.PlaceId == 17675690783 then
+local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("UnOriginal".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "unoriginal"})
+local Tab = Window:MakeTab({
+	Name = "scrip",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
+Tab:AddToggle({
+	Name = "Anti Particle CD",
+	Default = false,
+	Callback = function(Value)
+while true do
 for i, v in ipairs(Workspace:GetChildren()) do
-        if v:IsA("Model") and (not(table.find(MobList, v.Name)) or v.Name == "Barrier") and v.Name ~= Player.Name then
+        if v:IsA("Model") and v.Name ~= Player.Name then
             local Enemy = v:FindFirstChildWhichIsA("Humanoid")
     local args = {
         [1] = "Eradication",
         [2] = Enemy--:FindFirstChildWhichIsA("Humanoid"),
     }
     Rep.Damage:FireServer(unpack(args))
+
 end
 end
+--	end   
+end
+})
+
+--end
+
+
+--end
