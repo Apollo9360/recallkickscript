@@ -17,7 +17,6 @@ game:GetService("GuiService"):ClearError()
 
 local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-if game.PlaceId == 17675690783 then
 local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("UnOriginal".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "unoriginal"})
 local Tab = Window:MakeTab({
 	Name = "scrip",
@@ -30,7 +29,7 @@ Tab:AddToggle({
 	Callback = function(Value)
 while true do
 for i, v in ipairs(Workspace:GetChildren()) do
-        if v:IsA("Model") and (not(table.find(MobList, v.Name)) or v.Name == "Barrier") and v.Name ~= Player.Name then
+        if v:IsA("Model") and (not v.Name == "Barrier") and v.Name ~= Player.Name then
             local Enemy = v:FindFirstChildWhichIsA("Humanoid")
     local args = {
         [1] = "Eradication",
@@ -60,7 +59,6 @@ game:GetService("GuiService"):ClearError()
 
 local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Giangplay/Script/main/Orion_Library_PE_V2.lua")))()
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-if game.PlaceId == 17675690783 then
 local Window = OrionLib:MakeWindow({IntroText = "Loading", IntroIcon = "rbxassetid://15315284749",Name = ("UnOriginal".." | ".. identifyexecutor()),IntroToggleIcon = "rbxassetid://7734091286", HidePremium = false, SaveConfig = false, IntroEnabled = true, ConfigFolder = "unoriginal"})
 local Tab = Window:MakeTab({
 	Name = "scrip",
@@ -83,7 +81,7 @@ for i, v in ipairs(Workspace:GetChildren()) do
 
 end
 end
---	end   
+end   
 end
 })
 
