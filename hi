@@ -19,7 +19,7 @@ getgenv().FarmSettings = {
     AuraDistance = 49,
     FarmDistance = 1,
     KillPlayers = true,
-    SelectedQuest = Ultra Fair,
+    SelectedQuest = "Ultra Fair",
     LeaveOnMod = true
 }
 
@@ -215,6 +215,7 @@ local function getNearestObstacles(target, barrierOnly)
             end
         end
     end
+	
     return obstacle
 end
 
@@ -276,6 +277,13 @@ local function EnergyBlade(enemy)
     }
     Rep.Damage:FireServer(unpack(args))
 end
+local function Limitless(enemy)
+    local args = {
+        [1] = "Eradication",
+        [2] = enemy:FindFirstChildWhichIsA("Humanoid"),
+    }
+    Rep.Damage:FireServer(unpack(args))
+end
 
 
 
@@ -288,6 +296,9 @@ local function hit(enemy)
         wait(AuraSettings.PunchSpeed)
     elseif AuraSettings.Mode == "Energy Blade" then
         EnergyBlade(enemy)
+        wait(AuraSettings.PunchSpeed)
+    elseif AuraSettings.Mode == "Limitless" then
+        Limitless(enemy)
         wait(AuraSettings.PunchSpeed)
     end
 end
@@ -898,7 +909,7 @@ local TpToggle = PageFarm.AddToggle("Hidden Farm", FarmSettings.Hidden, function
             Player.Character:MoveTo(
                 Vector3.new(
                     Player.Character.HumanoidRootPart.Position.x, 
-                    Player.Character.HumanoidRootPart.Position.y + 1-- + FarmSettings.FarmDistance, 
+                    Player.Character.HumanoidRootPart.Position.y + 1,-- + FarmSettings.FarmDistance, 
                     Player.Character.HumanoidRootPart.Position.z
                 )
             )
@@ -954,6 +965,7 @@ local AuraMode = PageKillAura.AddDropdown("Aura Hit Mode",
     {   
     "Punch",
     "Dark Blade (Arbiter Only)",
+    "Limitless",
     "Energy Blade"
     }, function(value)
         AuraSettings.Mode = value
